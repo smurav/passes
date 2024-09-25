@@ -1,0 +1,64 @@
+
+;; Function main (main, funcdef_no=2012, decl_uid=50009, cgraph_uid=476, symbol_order=513)
+
+int main ()
+{
+  struct basic_ostream & D.54251;
+  int j;
+  unsigned int seed;
+  int i;
+  int D.54249;
+  int _1;
+  int _2;
+  int _3;
+  struct basic_ostream & _4;
+  int _11;
+  struct basic_ostream & _19;
+
+  <bb 2> :
+  i_9 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = i_5 + 1;
+  seed_12 = (unsigned int) _1;
+  srand (seed_12);
+  j_14 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = rand ();
+  _3 = _2 % 10;
+  _19 = std::basic_ostream<char>::operator<< (&cout, _3);
+  _4 = _19;
+  std::operator<< <std::char_traits<char> > (_4, " ");
+  j_21 = j_6 + 1;
+
+  <bb 5> :
+  # j_6 = PHI <j_14(3), j_21(4)>
+  if (j_6 <= 9)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  std::basic_ostream<char>::operator<< (&cout, endl);
+  i_16 = i_5 + 1;
+
+  <bb 7> :
+  # i_5 = PHI <i_9(2), i_16(6)>
+  if (i_5 <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _11 = 0;
+
+  <bb 9> :
+<L6>:
+  return _11;
+
+}
+
+
