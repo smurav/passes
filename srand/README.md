@@ -139,6 +139,11 @@ cat srand_instr.ll
 4 2 9 0 0 8 3 5 4 6 
 4 2 9 0 0 8 3 5 4 6 
 
-## Сборка с генерацией базы данных компиляции
-~/llvm20/bin/clang srand.cpp -o srand -MJ compile.db ...
+## Сборка с генерацией базы данных компиляции для GCC
+## База данных формируется в файле ./build/compile_commands.json
+cmake -G Ninja -B build
+cmake --build build --config release
+
+## Сборка с генерацией базы данных компиляции для LLVM
+~/llvm20/bin/clang srand.cpp -o srand -MJ compile_db.json ...
 
