@@ -15,6 +15,7 @@ include_directories(
 )
 
 set(CMAKE_SHARED_LIBRARY_PREFIX "gcc_")
+
 add_library(${PROJECT_NAME} SHARED srandpass.cpp)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_SOURCE_DIR}/../../srand/plugins)
