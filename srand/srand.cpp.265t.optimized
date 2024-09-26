@@ -1,63 +1,95 @@
 
-;; Function main (main, funcdef_no=2012, decl_uid=50009, cgraph_uid=476, symbol_order=513)
+;; Function main (main, funcdef_no=2087, decl_uid=50955, cgraph_uid=551, symbol_order=588) (executed once)
 
+Removing basic block 12
+Removing basic block 13
 int main ()
 {
-  struct basic_ostream & D.54251;
-  int j;
-  unsigned int seed;
   int i;
-  int D.54249;
   int _1;
   int _2;
   int _3;
-  struct basic_ostream & _4;
-  int _11;
-  struct basic_ostream & _19;
+  unsigned int ivtmp_4;
+  unsigned int ivtmp_6;
+  struct basic_ostream & _13;
+  int (*) () * _25;
+  long int _26;
+  sizetype _27;
+  struct basic_ios * _28;
+  int _30;
+  struct basic_ostream & _31;
+  const struct __ctype_type * _33;
+  char _37;
+  char _40;
+  int (*) () * _41;
+  int (*) () _42;
+  char _44;
+  char _45;
+  unsigned int _51;
 
-  <bb 2> :
-  i_9 = 0;
-  goto <bb 7>; [INV]
+  <bb 2> [local count: 9759239]:
 
-  <bb 3> :
-  _1 = i_5 + 1;
-  seed_12 = (unsigned int) _1;
-  srand (seed_12);
-  j_14 = 0;
-  goto <bb 5>; [INV]
+  <bb 3> [local count: 97603128]:
+  # i_34 = PHI <_1(10), 0(2)>
+  _1 = i_34 + 1;
+  _51 = (unsigned int) _1;
+  srand (_51);
 
-  <bb 4> :
+  <bb 4> [local count: 976138695]:
+  # ivtmp_4 = PHI <ivtmp_6(4), 10(3)>
   _2 = rand ();
   _3 = _2 % 10;
-  _19 = std::basic_ostream<char>::operator<< (&cout, _3);
-  _4 = _19;
-  std::operator<< <std::char_traits<char> > (_4, " ");
-  j_21 = j_6 + 1;
-
-  <bb 5> :
-  # j_6 = PHI <j_14(3), j_21(4)>
-  if (j_6 <= 9)
-    goto <bb 4>; [INV]
+  _13 = std::basic_ostream<char>::operator<< (&cout, _3);
+  std::__ostream_insert<char, std::char_traits<char> > (_13, " ", 1);
+  ivtmp_6 = ivtmp_4 + 4294967295;
+  if (ivtmp_6 != 0)
+    goto <bb 4>; [90.00%]
   else
-    goto <bb 6>; [INV]
+    goto <bb 5>; [10.00%]
 
-  <bb 6> :
-  std::basic_ostream<char>::operator<< (&cout, endl);
-  i_16 = i_5 + 1;
-
-  <bb 7> :
-  # i_5 = PHI <i_9(2), i_16(6)>
-  if (i_5 <= 9)
-    goto <bb 3>; [INV]
+  <bb 5> [local count: 97603128]:
+  _25 = cout._vptr.basic_ostream;
+  _26 = MEM[(long int *)_25 + -24B];
+  _27 = (sizetype) _26;
+  _28 = &cout + _27;
+  _33 = MEM[(const struct basic_ios *)_28]._M_ctype;
+  if (_33 == 0B)
+    goto <bb 6>; [0.00%]
   else
-    goto <bb 8>; [INV]
+    goto <bb 7>; [100.00%]
 
-  <bb 8> :
-  _11 = 0;
+  <bb 6> [count: 0]:
+  std::__throw_bad_cast ();
 
-  <bb 9> :
-<L6>:
-  return _11;
+  <bb 7> [local count: 97603128]:
+  _37 = MEM[(const struct ctype *)_33]._M_widen_ok;
+  if (_37 != 0)
+    goto <bb 8>; [51.12%]
+  else
+    goto <bb 9>; [48.88%]
+
+  <bb 8> [local count: 49894719]:
+  _40 = MEM[(const struct ctype *)_33]._M_widen[10];
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_33);
+  _41 = MEM[(const struct ctype *)_33].D.44110._vptr.facet;
+  _42 = MEM[(int (*) () *)_41 + 48B];
+  _44 = OBJ_TYPE_REF(_42;(const struct ctype)_33->6B) (_33, 10);
+
+  <bb 10> [local count: 97603128]:
+  # _45 = PHI <_40(8), _44(9)>
+  _30 = (int) _45;
+  _31 = std::basic_ostream<char>::put (&cout, _30);
+  std::basic_ostream<char>::flush (_31);
+  if (_1 != 10)
+    goto <bb 3>; [90.00%]
+  else
+    goto <bb 11>; [10.00%]
+
+  <bb 11> [local count: 9759239]:
+  return 0;
 
 }
 
