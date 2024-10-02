@@ -1,0 +1,3898 @@
+
+;; Function std::random_device::~random_device (_ZNSt13random_deviceD2Ev, funcdef_no=3204, decl_uid=66823, cgraph_uid=1062, symbol_order=1689)
+
+void std::random_device::~random_device (struct random_device * const this)
+{
+  <bb 2> [local count: 1073741824]:
+  std::random_device::_M_fini (this_2(D));
+  *this_2(D) ={v} {CLOBBER(eob)};
+  return;
+
+}
+
+
+
+;; Function std::__cxx11::basic_string<char>::_M_construct<const char*> (_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag, funcdef_no=4315, decl_uid=88096, cgraph_uid=1622, symbol_order=2298)
+
+Removing basic block 9
+Removing basic block 10
+void std::__cxx11::basic_string<char>::_M_construct<const char*> (struct basic_string * const this, const char * __beg, const char * __end, struct forward_iterator_tag D.89820)
+{
+  size_type __dnew;
+  long unsigned int _1;
+  long unsigned int __dnew.16_2;
+  long unsigned int __dnew.17_3;
+  char * _8;
+  char * _12;
+  long int _13;
+  char * _15;
+  char * _16;
+  char _22;
+  char * _28;
+
+  <bb 2> [local count: 1073741824]:
+  _13 = __end_7(D) - __beg_6(D);
+  _1 = (long unsigned int) _13;
+  __dnew = _1;
+  if (_1 > 15)
+    goto <bb 3>; [33.00%]
+  else
+    goto <bb 4>; [67.00%]
+
+  <bb 3> [local count: 354334800]:
+  _12 = std::__cxx11::basic_string<char>::_M_create (this_10(D), &__dnew, 0);
+  this_10(D)->_M_dataplus._M_p = _12;
+  __dnew.16_2 = __dnew;
+  this_10(D)->D.28283._M_allocated_capacity = __dnew.16_2;
+  goto <bb 7>; [100.00%]
+
+  <bb 4> [local count: 727344126]:
+  _16 = MEM[(const struct basic_string *)this_10(D)]._M_dataplus._M_p;
+  if (_1 == 1)
+    goto <bb 5>; [50.19%]
+  else
+    goto <bb 6>; [49.81%]
+
+  <bb 5> [local count: 365072224]:
+  _22 = MEM[(const char_type &)__beg_6(D)];
+  MEM[(char_type &)_16] = _22;
+  goto <bb 8>; [100.00%]
+
+  <bb 6> [local count: 362271902]:
+  if (_1 == 0)
+    goto <bb 8>; [100.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [local count: 346397698]:
+  # _28 = PHI <_16(6), _12(3)>
+  __builtin_memcpy (_28, __beg_6(D), _1);
+
+  <bb 8> [local count: 1073741824]:
+  __dnew.17_3 = __dnew;
+  this_10(D)->_M_string_length = __dnew.17_3;
+  _8 = MEM[(const struct basic_string *)this_10(D)]._M_dataplus._M_p;
+  _15 = _8 + __dnew.17_3;
+  MEM[(char_type &)_15] = 0;
+  __dnew ={v} {CLOBBER(eos)};
+  return;
+
+}
+
+
+
+;; Function std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::seed (_ZNSt23mersenne_twister_engineImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EE4seedEm, funcdef_no=4556, decl_uid=76707, cgraph_uid=1857, symbol_order=2543)
+
+Removing basic block 5
+void std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::seed (struct mersenne_twister_engine * const this, result_type __sd)
+{
+  long unsigned int __res;
+  long unsigned int __x;
+  size_t __i;
+  long unsigned int _2;
+
+  <bb 2> [local count: 10737416]:
+  this_7(D)->_M_x[0] = __sd_6(D);
+
+  <bb 3> [local count: 1063004408]:
+  # __i_19 = PHI <__i_16(3), 1(2)>
+  __x_10 = MEM[(long unsigned int *)this_7(D) + -8B + __i_19 * 8];
+  _2 = __x_10 >> 62;
+  __x_11 = _2 ^ __x_10;
+  __x_12 = __x_11 * 6364136223846793005;
+  __res_14 = __i_19 % 312;
+  __x_13 = __x_12 + __res_14;
+  MEM[(long unsigned int *)this_7(D) + __i_19 * 8] = __x_13;
+  __i_16 = __i_19 + 1;
+  if (__i_16 != 312)
+    goto <bb 3>; [98.99%]
+  else
+    goto <bb 4>; [1.01%]
+
+  <bb 4> [local count: 10737416]:
+  this_7(D)->_M_p = 312;
+  return;
+
+}
+
+
+
+;; Function std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::seed (_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EE4seedEm, funcdef_no=4557, decl_uid=66688, cgraph_uid=1858, symbol_order=2544)
+
+Removing basic block 5
+void std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::seed (struct mersenne_twister_engine * const this, result_type __sd)
+{
+  long unsigned int __res;
+  long unsigned int __res;
+  long unsigned int __res;
+  long unsigned int __x;
+  size_t __i;
+  long unsigned int _2;
+
+  <bb 2> [local count: 10737416]:
+  __res_16 = __sd_6(D) & 4294967295;
+  this_8(D)->_M_x[0] = __res_16;
+
+  <bb 3> [local count: 1063004408]:
+  # __i_21 = PHI <__i_18(3), 1(2)>
+  __x_11 = MEM[(long unsigned int *)this_8(D) + -8B + __i_21 * 8];
+  _2 = __x_11 >> 30;
+  __x_12 = _2 ^ __x_11;
+  __x_13 = __x_12 * 1812433253;
+  __res_7 = __i_21 % 624;
+  __x_15 = __res_7 + __x_13;
+  __res_14 = __x_15 & 4294967295;
+  MEM[(long unsigned int *)this_8(D) + __i_21 * 8] = __res_14;
+  __i_18 = __i_21 + 1;
+  if (__i_18 != 624)
+    goto <bb 3>; [98.99%]
+  else
+    goto <bb 4>; [1.01%]
+
+  <bb 4> [local count: 10737416]:
+  this_8(D)->_M_p = 624;
+  return;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE, funcdef_no=4563, decl_uid=92022, cgraph_uid=1866, symbol_order=2552)
+
+Removing basic block 11
+Removing basic block 12
+Removing basic block 13
+result_type std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct uniform_int_distribution * const this, struct linear_congruential_engine & __urng, const struct param_type & __param)
+{
+  long unsigned int __urng___M_x_lsm.268;
+  long unsigned int __res;
+  long unsigned int __res;
+  long unsigned int __res;
+  __uctype __tmp;
+  const __uctype __past;
+  const __uctype __scaling;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.93043;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  bool _7;
+  bool _8;
+  bool _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned int _12;
+  int _20;
+  int _26;
+  int _35;
+  result_type _36;
+  long unsigned int _39;
+  long unsigned int _42;
+  int _45;
+  long unsigned int _52;
+
+  <bb 2> [local count: 236223200]:
+  _20 = __param_18(D)->_M_b;
+  _1 = (long unsigned int) _20;
+  _35 = __param_18(D)->_M_a;
+  _2 = (long unsigned int) _35;
+  __urange_21 = _1 - _2;
+  if (__urange_21 <= 2147483644)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  __uerange_30 = __urange_21 + 1;
+  __scaling_31 = 2147483645 / __uerange_30;
+  __past_32 = __uerange_30 * __scaling_31;
+  __urng___M_x_lsm.268_53 = __urng_22(D)->_M_x;
+
+  <bb 4> [local count: 1073741824]:
+  # __urng___M_x_lsm.268_6 = PHI <__urng___M_x_lsm.268_53(3), __res_38(4)>
+  __res_37 = __urng___M_x_lsm.268_6 * 16807;
+  __res_38 = __res_37 % 2147483647;
+  __ret_33 = __res_38 + 18446744073709551615;
+  if (__past_32 <= __ret_33)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  __urng_22(D)->_M_x = __res_38;
+  __ret_34 = __ret_33 / __scaling_31;
+  goto <bb 10>; [100.00%]
+
+  <bb 6> [local count: 118111600]:
+  if (__urange_21 > 2147483645)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 7> [local count: 59055800]:
+  _3 = __urange_21 / 2147483646;
+  _4 = (int) _3;
+
+  <bb 8> [local count: 212600880]:
+  D.93043 ={v} {CLOBBER(bob)};
+  D.93043._M_a = 0;
+  D.93043._M_b = _4;
+  _26 = std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (this_24(D), __urng_22(D), &D.93043);
+  _5 = (long unsigned int) _26;
+  __tmp_27 = _5 * 2147483646;
+  D.93043 ={v} {CLOBBER(eos)};
+  _39 = __urng_22(D)->_M_x;
+  __res_40 = _39 * 16807;
+  __res_41 = __res_40 % 2147483647;
+  __urng_22(D)->_M_x = __res_41;
+  _52 = __res_41 + 18446744073709551615;
+  __ret_29 = __tmp_27 + _52;
+  _7 = __urange_21 < __ret_29;
+  _8 = __tmp_27 > __ret_29;
+  _9 = _7 | _8;
+  if (_9 != 0)
+    goto <bb 8>; [78.00%]
+  else
+    goto <bb 10>; [22.00%]
+
+  <bb 9> [local count: 59055800]:
+  _42 = __urng_22(D)->_M_x;
+  __res_43 = _42 * 16807;
+  __res_44 = __res_43 % 2147483647;
+  __urng_22(D)->_M_x = __res_44;
+  __ret_23 = __res_44 + 18446744073709551615;
+
+  <bb 10> [local count: 236223200]:
+  # __ret_13 = PHI <__ret_34(5), __ret_29(8), __ret_23(9)>
+  _45 = __param_18(D)->_M_a;
+  _10 = (unsigned int) _45;
+  _11 = (unsigned int) __ret_13;
+  _12 = _10 + _11;
+  _36 = (result_type) _12;
+  return _36;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647> > (_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm48271ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE, funcdef_no=4650, decl_uid=93059, cgraph_uid=1953, symbol_order=2647)
+
+Removing basic block 11
+Removing basic block 12
+Removing basic block 13
+result_type std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647> > (struct uniform_int_distribution * const this, struct linear_congruential_engine & __urng, const struct param_type & __param)
+{
+  long unsigned int __urng___M_x_lsm.270;
+  long unsigned int __res;
+  long unsigned int __res;
+  long unsigned int __res;
+  __uctype __tmp;
+  const __uctype __past;
+  const __uctype __scaling;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.93591;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  bool _7;
+  bool _8;
+  bool _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned int _12;
+  int _20;
+  int _26;
+  int _35;
+  result_type _36;
+  long unsigned int _39;
+  long unsigned int _42;
+  int _45;
+  long unsigned int _52;
+
+  <bb 2> [local count: 236223200]:
+  _20 = __param_18(D)->_M_b;
+  _1 = (long unsigned int) _20;
+  _35 = __param_18(D)->_M_a;
+  _2 = (long unsigned int) _35;
+  __urange_21 = _1 - _2;
+  if (__urange_21 <= 2147483644)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  __uerange_30 = __urange_21 + 1;
+  __scaling_31 = 2147483645 / __uerange_30;
+  __past_32 = __uerange_30 * __scaling_31;
+  __urng___M_x_lsm.270_53 = __urng_22(D)->_M_x;
+
+  <bb 4> [local count: 1073741824]:
+  # __urng___M_x_lsm.270_6 = PHI <__urng___M_x_lsm.270_53(3), __res_38(4)>
+  __res_37 = __urng___M_x_lsm.270_6 * 48271;
+  __res_38 = __res_37 % 2147483647;
+  __ret_33 = __res_38 + 18446744073709551615;
+  if (__past_32 <= __ret_33)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  __urng_22(D)->_M_x = __res_38;
+  __ret_34 = __ret_33 / __scaling_31;
+  goto <bb 10>; [100.00%]
+
+  <bb 6> [local count: 118111600]:
+  if (__urange_21 > 2147483645)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 7> [local count: 59055800]:
+  _3 = __urange_21 / 2147483646;
+  _4 = (int) _3;
+
+  <bb 8> [local count: 212600880]:
+  D.93591 ={v} {CLOBBER(bob)};
+  D.93591._M_a = 0;
+  D.93591._M_b = _4;
+  _26 = std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647> > (this_24(D), __urng_22(D), &D.93591);
+  _5 = (long unsigned int) _26;
+  __tmp_27 = _5 * 2147483646;
+  D.93591 ={v} {CLOBBER(eos)};
+  _39 = __urng_22(D)->_M_x;
+  __res_40 = _39 * 48271;
+  __res_41 = __res_40 % 2147483647;
+  __urng_22(D)->_M_x = __res_41;
+  _52 = __res_41 + 18446744073709551615;
+  __ret_29 = __tmp_27 + _52;
+  _7 = __urange_21 < __ret_29;
+  _8 = __tmp_27 > __ret_29;
+  _9 = _7 | _8;
+  if (_9 != 0)
+    goto <bb 8>; [78.00%]
+  else
+    goto <bb 10>; [22.00%]
+
+  <bb 9> [local count: 59055800]:
+  _42 = __urng_22(D)->_M_x;
+  __res_43 = _42 * 48271;
+  __res_44 = __res_43 % 2147483647;
+  __urng_22(D)->_M_x = __res_44;
+  __ret_23 = __res_44 + 18446744073709551615;
+
+  <bb 10> [local count: 236223200]:
+  # __ret_13 = PHI <__ret_34(5), __ret_29(8), __ret_23(9)>
+  _45 = __param_18(D)->_M_a;
+  _10 = (unsigned int) _45;
+  _11 = (unsigned int) __ret_13;
+  _12 = _10 + _11;
+  _36 = (result_type) _12;
+  return _36;
+
+}
+
+
+
+;; Function std::__detail::_Mod<unsigned int, 2147483563, 40014, 0, false, true>::__calc (_ZNSt8__detail4_ModIjLj2147483563ELj40014ELj0ELb0ELb1EE6__calcEj, funcdef_no=4707, decl_uid=93727, cgraph_uid=2008, symbol_order=2714)
+
+unsigned int std::__detail::_Mod<unsigned int, 2147483563, 40014, 0, false, true>::__calc (unsigned int __x)
+{
+  unsigned int __t2;
+  unsigned int __t1;
+  unsigned int _1;
+  unsigned int _2;
+  unsigned int _12;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = __x_5(D) % 53668;
+  __t1_6 = _1 * 40014;
+  _2 = __x_5(D) / 53668;
+  __t2_7 = _2 * 12211;
+  if (__t1_6 >= __t2_7)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 4>; [50.00%]
+
+  <bb 3> [local count: 536870912]:
+  __x_9 = __t1_6 - __t2_7;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [local count: 536870912]:
+  _12 = __t1_6 + 2147483563;
+  __x_8 = _12 - __t2_7;
+
+  <bb 5> [local count: 1073741824]:
+  # __x_4 = PHI <__x_9(3), __x_8(4)>
+  return __x_4;
+
+}
+
+
+
+;; Function std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (_ZNSt26subtract_with_carry_engineImLm48ELm5ELm12EE4seedEm, funcdef_no=4554, decl_uid=76948, cgraph_uid=1855, symbol_order=2540)
+
+Removing basic block 7
+Removing basic block 8
+void std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (struct subtract_with_carry_engine * const this, result_type __value)
+{
+  unsigned long ivtmp.283;
+  unsigned int __lcg$_M_x;
+  unsigned int __res;
+  long unsigned int __res;
+  long unsigned int __sum;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  unsigned int _5;
+  result_type iftmp.2_8;
+  result_type iftmp.2_13;
+  unsigned int _22;
+  long unsigned int _23;
+  void * _28;
+  unsigned long _29;
+  bool _32;
+  unsigned int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+
+  <bb 2> [local count: 29813486]:
+  if (__value_12(D) != 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 4>; [50.00%]
+
+  <bb 3> [local count: 14906743]:
+  _1 = __value_12(D) % 2147483563;
+  iftmp.2_13 = (result_type) _1;
+
+  <bb 4> [local count: 29813486]:
+  # iftmp.2_8 = PHI <iftmp.2_13(3), 19780503(2)>
+  __res_31 = iftmp.2_8 % 2147483563;
+  _33 = MAX_EXPR <__res_31, 1>;
+  ivtmp.283_36 = (unsigned long) this_15(D);
+  _29 = ivtmp.283_36 + 96;
+
+  <bb 5> [local count: 357878154]:
+  # __lcg$_M_x_11 = PHI <_22(5), _33(4)>
+  # ivtmp.283_18 = PHI <ivtmp.283_30(5), ivtmp.283_36(4)>
+  _5 = std::__detail::_Mod<unsigned int, 2147483563, 40014, 0, false, true>::__calc (__lcg$_M_x_11);
+  _35 = (long unsigned int) _5;
+  _22 = std::__detail::_Mod<unsigned int, 2147483563, 40014, 0, false, true>::__calc (_5);
+  _2 = (long unsigned int) _22;
+  _23 = _2 * 4294967296;
+  __sum_24 = _23 + _35;
+  __res_27 = __sum_24 & 281474976710655;
+  _28 = (void *) ivtmp.283_18;
+  MEM[(long unsigned int *)_28] = __res_27;
+  ivtmp.283_30 = ivtmp.283_18 + 8;
+  if (_29 != ivtmp.283_30)
+    goto <bb 5>; [91.67%]
+  else
+    goto <bb 6>; [8.33%]
+
+  <bb 6> [local count: 29813486]:
+  _3 = this_15(D)->_M_x[11];
+  _32 = _3 == 0;
+  _34 = (long unsigned int) _32;
+  this_15(D)->_M_carry = _34;
+  this_15(D)->_M_p = 0;
+  return;
+
+}
+
+
+
+;; Function std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (_ZNSt26subtract_with_carry_engineImLm24ELm10ELm24EE4seedEm, funcdef_no=4555, decl_uid=76833, cgraph_uid=1856, symbol_order=2542)
+
+Removing basic block 7
+Removing basic block 8
+void std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (struct subtract_with_carry_engine * const this, result_type __value)
+{
+  unsigned long ivtmp.294;
+  unsigned int __lcg$_M_x;
+  unsigned int __res;
+  long unsigned int __res;
+  long unsigned int _1;
+  long unsigned int _3;
+  void * _7;
+  result_type iftmp.6_8;
+  result_type iftmp.6_13;
+  unsigned int _22;
+  unsigned int _26;
+  bool _32;
+  unsigned int _33;
+  long unsigned int _34;
+  unsigned long _39;
+
+  <bb 2> [local count: 22369621]:
+  if (__value_12(D) != 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 4>; [50.00%]
+
+  <bb 3> [local count: 11184810]:
+  _1 = __value_12(D) % 2147483563;
+  iftmp.6_13 = (result_type) _1;
+
+  <bb 4> [local count: 22369622]:
+  # iftmp.6_8 = PHI <iftmp.6_13(3), 19780503(2)>
+  __res_31 = iftmp.6_8 % 2147483563;
+  _33 = MAX_EXPR <__res_31, 1>;
+  ivtmp.294_10 = (unsigned long) this_15(D);
+  _39 = ivtmp.294_10 + 192;
+
+  <bb 5> [local count: 536870912]:
+  # __lcg$_M_x_11 = PHI <_22(5), _33(4)>
+  # ivtmp.294_24 = PHI <ivtmp.294_19(5), ivtmp.294_10(4)>
+  _22 = std::__detail::_Mod<unsigned int, 2147483563, 40014, 0, false, true>::__calc (__lcg$_M_x_11);
+  _26 = _22 & 16777215;
+  __res_27 = (long unsigned int) _26;
+  _7 = (void *) ivtmp.294_24;
+  MEM[(long unsigned int *)_7] = __res_27;
+  ivtmp.294_19 = ivtmp.294_24 + 8;
+  if (ivtmp.294_19 != _39)
+    goto <bb 5>; [95.83%]
+  else
+    goto <bb 6>; [4.17%]
+
+  <bb 6> [local count: 22369621]:
+  _3 = this_15(D)->_M_x[23];
+  _32 = _3 == 0;
+  _34 = (long unsigned int) _32;
+  this_15(D)->_M_carry = _34;
+  this_15(D)->_M_p = 0;
+  return;
+
+}
+
+
+
+;; Function std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::_M_gen_rand (_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EE11_M_gen_randEv, funcdef_no=4721, decl_uid=66774, cgraph_uid=2022, symbol_order=2732)
+
+Removing basic block 4
+Removing basic block 8
+Removing basic block 11
+Removing basic block 14
+Removing basic block 16
+void std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::_M_gen_rand (struct mersenne_twister_engine * const this)
+{
+  unsigned long ivtmp.312;
+  unsigned long ivtmp.305;
+  long unsigned int __y;
+  long unsigned int __y;
+  long unsigned int __y;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int iftmp.30_34;
+  long unsigned int iftmp.31_35;
+  long unsigned int iftmp.32_36;
+  void * _59;
+  unsigned long _62;
+  void * _66;
+  unsigned long _71;
+
+  <bb 2> [local count: 10737416]:
+  ivtmp.312_65 = (unsigned long) this_40(D);
+  _71 = ivtmp.312_65 + 1816;
+
+  <bb 3> [local count: 1063004408]:
+  # ivtmp.312_63 = PHI <ivtmp.312_64(5), ivtmp.312_65(2)>
+  _66 = (void *) ivtmp.312_63;
+  _1 = MEM[(long unsigned int *)_66];
+  _2 = _1 & 18446744071562067968;
+  _4 = MEM[(long unsigned int *)_66 + 8B];
+  _5 = _4 & 2147483647;
+  __y_46 = _2 | _5;
+  _7 = MEM[(long unsigned int *)_66 + 3176B];
+  _8 = __y_46 >> 1;
+  _9 = _7 ^ _8;
+  _10 = __y_46 & 1;
+  if (_10 != 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [local count: 531502204]:
+
+  <bb 5> [local count: 1063004408]:
+  # iftmp.30_34 = PHI <2567483615(4), _10(3)>
+  _11 = _9 ^ iftmp.30_34;
+  MEM[(long unsigned int *)_66] = _11;
+  ivtmp.312_64 = ivtmp.312_63 + 8;
+  if (ivtmp.312_64 != _71)
+    goto <bb 3>; [98.99%]
+  else
+    goto <bb 6>; [1.01%]
+
+  <bb 6> [local count: 10737413]:
+  _62 = ivtmp.312_65 + 3168;
+
+  <bb 7> [local count: 1063004408]:
+  # ivtmp.305_32 = PHI <ivtmp.305_51(9), ivtmp.312_65(6)>
+  _59 = (void *) ivtmp.305_32;
+  _12 = MEM[(long unsigned int *)_59 + 1816B];
+  _13 = _12 & 18446744071562067968;
+  _15 = MEM[(long unsigned int *)_59 + 1824B];
+  _16 = _15 & 2147483647;
+  __y_44 = _13 | _16;
+  _18 = MEM[(long unsigned int *)_59];
+  _19 = __y_44 >> 1;
+  _20 = _18 ^ _19;
+  _21 = __y_44 & 1;
+  if (_21 != 0)
+    goto <bb 8>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 8> [local count: 531502204]:
+
+  <bb 9> [local count: 1063004408]:
+  # iftmp.31_35 = PHI <2567483615(8), _21(7)>
+  _22 = _20 ^ iftmp.31_35;
+  MEM[(long unsigned int *)_59 + 1816B] = _22;
+  ivtmp.305_51 = ivtmp.305_32 + 8;
+  if (ivtmp.305_51 != _62)
+    goto <bb 7>; [98.99%]
+  else
+    goto <bb 10>; [1.01%]
+
+  <bb 10> [local count: 10737416]:
+  _23 = this_40(D)->_M_x[623];
+  _24 = _23 & 18446744071562067968;
+  _25 = this_40(D)->_M_x[0];
+  _26 = _25 & 2147483647;
+  __y_41 = _24 | _26;
+  _27 = this_40(D)->_M_x[396];
+  _28 = __y_41 >> 1;
+  _29 = _27 ^ _28;
+  _30 = __y_41 & 1;
+  if (_30 != 0)
+    goto <bb 11>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 11> [local count: 5368708]:
+
+  <bb 12> [local count: 10737416]:
+  # iftmp.32_36 = PHI <2567483615(11), _30(10)>
+  _31 = _29 ^ iftmp.32_36;
+  this_40(D)->_M_x[623] = _31;
+  this_40(D)->_M_p = 0;
+  return;
+
+}
+
+
+
+;; Function std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::operator() (_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv, funcdef_no=4710, decl_uid=66701, cgraph_uid=2011, symbol_order=2717)
+
+Removing basic block 5
+result_type std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::operator() (struct mersenne_twister_engine * const this)
+{
+  result_type __z;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = this_13(D)->_M_p;
+  if (_1 > 623)
+    goto <bb 3>; [33.00%]
+  else
+    goto <bb 4>; [67.00%]
+
+  <bb 3> [local count: 354334800]:
+  std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::_M_gen_rand (this_13(D));
+
+  <bb 4> [local count: 1073741824]:
+  _2 = this_13(D)->_M_p;
+  _3 = _2 + 1;
+  this_13(D)->_M_p = _3;
+  __z_16 = this_13(D)->_M_x[_2];
+  _4 = __z_16 >> 11;
+  _5 = _4 & 4294967295;
+  __z_17 = _5 ^ __z_16;
+  _6 = __z_17 << 7;
+  _7 = _6 & 2636928640;
+  __z_18 = _7 ^ __z_17;
+  _8 = __z_18 << 15;
+  _9 = _8 & 4022730752;
+  __z_19 = _9 ^ __z_18;
+  _10 = __z_19 >> 18;
+  __z_20 = _10 ^ __z_19;
+  return __z_20;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> > (_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE, funcdef_no=4689, decl_uid=93600, cgraph_uid=1992, symbol_order=2690)
+
+Removing basic block 11
+Removing basic block 12
+Removing basic block 13
+Removing basic block 14
+Removing basic block 15
+Removing basic block 16
+Removing basic block 17
+Removing basic block 18
+result_type std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> > (struct uniform_int_distribution * const this, struct mersenne_twister_engine & __urng, const struct param_type & __param)
+{
+  long unsigned int __product;
+  unsigned int __low;
+  unsigned int __threshold;
+  __uctype __tmp;
+  unsigned int __u32erange;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.93774;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _5;
+  bool _6;
+  bool _7;
+  bool _8;
+  unsigned int _9;
+  unsigned int _10;
+  unsigned int _11;
+  int _17;
+  int _18;
+  __uctype _22;
+  int _25;
+  long unsigned int _29;
+  int _36;
+  result_type _37;
+  long unsigned int _41;
+  unsigned int _45;
+  long unsigned int _47;
+  long unsigned int _52;
+
+  <bb 2> [local count: 526226774]:
+  _18 = __param_16(D)->_M_b;
+  _1 = (long unsigned int) _18;
+  _36 = __param_16(D)->_M_a;
+  _2 = (long unsigned int) _36;
+  __urange_19 = _1 - _2;
+  if (__urange_19 <= 4294967294)
+    goto <bb 3>; [33.00%]
+  else
+    goto <bb 7>; [67.00%]
+
+  <bb 3> [local count: 173654835]:
+  __uerange_31 = __urange_19 + 1;
+  __u32erange_32 = (unsigned int) __uerange_31;
+  _41 = std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::operator() (__urng_20(D));
+  __product_43 = __uerange_31 * _41;
+  __low_44 = (unsigned int) __product_43;
+  if (__u32erange_32 > __low_44)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 4> [local count: 86827417]:
+  _45 = -__u32erange_32;
+  __threshold_46 = _45 % __u32erange_32;
+  if (__low_44 < __threshold_46)
+    goto <bb 5>; [89.00%]
+  else
+    goto <bb 6>; [11.00%]
+
+  <bb 5> [local count: 702512744]:
+  _47 = std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::operator() (__urng_20(D));
+  __product_48 = __uerange_31 * _47;
+  __low_49 = (unsigned int) __product_48;
+  if (__threshold_46 > __low_49)
+    goto <bb 5>; [89.00%]
+  else
+    goto <bb 6>; [11.00%]
+
+  <bb 6> [local count: 173654835]:
+  # __product_51 = PHI <__product_43(3), __product_48(5), __product_43(4)>
+  _52 = __product_51 >> 32;
+  goto <bb 10>; [100.00%]
+
+  <bb 7> [local count: 352571940]:
+  if (__urange_19 > 4294967295)
+    goto <bb 8>; [67.00%]
+  else
+    goto <bb 9>; [33.00%]
+
+  <bb 8> [local count: 473604097]:
+  D.93774 ={v} {CLOBBER(bob)};
+  D.93774._M_a = 0;
+  D.93774._M_b = -1;
+  _25 = std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> > (this_23(D), __urng_20(D), &D.93774);
+  _5 = (long unsigned int) _25;
+  __tmp_26 = _5 * 4294967296;
+  D.93774 ={v} {CLOBBER(eos)};
+  _29 = std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::operator() (__urng_20(D));
+  __ret_30 = __tmp_26 + _29;
+  _6 = __urange_19 < __ret_30;
+  _7 = __tmp_26 > __ret_30;
+  _8 = _6 | _7;
+  if (_8 != 0)
+    goto <bb 8>; [78.00%]
+  else
+    goto <bb 10>; [22.00%]
+
+  <bb 9> [local count: 116348740]:
+  _22 = std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::operator() (__urng_20(D));
+
+  <bb 10> [local count: 526226774]:
+  # __ret_12 = PHI <_52(6), __ret_30(8), _22(9)>
+  _17 = __param_16(D)->_M_a;
+  _9 = (unsigned int) _17;
+  _10 = (unsigned int) __ret_12;
+  _11 = _9 + _10;
+  _37 = (result_type) _11;
+  return _37;
+
+}
+
+
+
+;; Function std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::_M_gen_rand (_ZNSt23mersenne_twister_engineImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EE11_M_gen_randEv, funcdef_no=4729, decl_uid=76760, cgraph_uid=2030, symbol_order=2744)
+
+Removing basic block 4
+Removing basic block 8
+Removing basic block 11
+Removing basic block 14
+Removing basic block 16
+void std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::_M_gen_rand (struct mersenne_twister_engine * const this)
+{
+  unsigned long ivtmp.333;
+  unsigned long ivtmp.326;
+  long unsigned int __y;
+  long unsigned int __y;
+  long unsigned int __y;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int iftmp.37_34;
+  long unsigned int iftmp.38_35;
+  long unsigned int iftmp.39_36;
+  void * _59;
+  unsigned long _62;
+  void * _66;
+  unsigned long _71;
+
+  <bb 2> [local count: 10737416]:
+  ivtmp.333_65 = (unsigned long) this_40(D);
+  _71 = ivtmp.333_65 + 1248;
+
+  <bb 3> [local count: 1063004408]:
+  # ivtmp.333_63 = PHI <ivtmp.333_64(5), ivtmp.333_65(2)>
+  _66 = (void *) ivtmp.333_63;
+  _1 = MEM[(long unsigned int *)_66];
+  _2 = _1 & 18446744071562067968;
+  _4 = MEM[(long unsigned int *)_66 + 8B];
+  _5 = _4 & 2147483647;
+  __y_46 = _2 | _5;
+  _7 = MEM[(long unsigned int *)_66 + 1248B];
+  _8 = __y_46 >> 1;
+  _9 = _7 ^ _8;
+  _10 = __y_46 & 1;
+  if (_10 != 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [local count: 531502204]:
+
+  <bb 5> [local count: 1063004408]:
+  # iftmp.37_34 = PHI <13043109905998158313(4), _10(3)>
+  _11 = _9 ^ iftmp.37_34;
+  MEM[(long unsigned int *)_66] = _11;
+  ivtmp.333_64 = ivtmp.333_63 + 8;
+  if (ivtmp.333_64 != _71)
+    goto <bb 3>; [98.99%]
+  else
+    goto <bb 6>; [1.01%]
+
+  <bb 6> [local count: 10737413]:
+  _62 = ivtmp.333_65 + 1240;
+
+  <bb 7> [local count: 1063004408]:
+  # ivtmp.326_32 = PHI <ivtmp.326_51(9), ivtmp.333_65(6)>
+  _59 = (void *) ivtmp.326_32;
+  _12 = MEM[(long unsigned int *)_59 + 1248B];
+  _13 = _12 & 18446744071562067968;
+  _15 = MEM[(long unsigned int *)_59 + 1256B];
+  _16 = _15 & 2147483647;
+  __y_44 = _13 | _16;
+  _18 = MEM[(long unsigned int *)_59];
+  _19 = __y_44 >> 1;
+  _20 = _18 ^ _19;
+  _21 = __y_44 & 1;
+  if (_21 != 0)
+    goto <bb 8>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 8> [local count: 531502204]:
+
+  <bb 9> [local count: 1063004408]:
+  # iftmp.38_35 = PHI <13043109905998158313(8), _21(7)>
+  _22 = _20 ^ iftmp.38_35;
+  MEM[(long unsigned int *)_59 + 1248B] = _22;
+  ivtmp.326_51 = ivtmp.326_32 + 8;
+  if (ivtmp.326_51 != _62)
+    goto <bb 7>; [98.99%]
+  else
+    goto <bb 10>; [1.01%]
+
+  <bb 10> [local count: 10737416]:
+  _23 = this_40(D)->_M_x[311];
+  _24 = _23 & 18446744071562067968;
+  _25 = this_40(D)->_M_x[0];
+  _26 = _25 & 2147483647;
+  __y_41 = _24 | _26;
+  _27 = this_40(D)->_M_x[155];
+  _28 = __y_41 >> 1;
+  _29 = _27 ^ _28;
+  _30 = __y_41 & 1;
+  if (_30 != 0)
+    goto <bb 11>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 11> [local count: 5368708]:
+
+  <bb 12> [local count: 10737416]:
+  # iftmp.39_36 = PHI <13043109905998158313(11), _30(10)>
+  _31 = _29 ^ iftmp.39_36;
+  this_40(D)->_M_x[311] = _31;
+  this_40(D)->_M_p = 0;
+  return;
+
+}
+
+
+
+;; Function std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::operator() (_ZNSt23mersenne_twister_engineImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EEclEv, funcdef_no=4723, decl_uid=76721, cgraph_uid=2024, symbol_order=2734)
+
+Removing basic block 5
+result_type std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::operator() (struct mersenne_twister_engine * const this)
+{
+  result_type __z;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = this_13(D)->_M_p;
+  if (_1 > 311)
+    goto <bb 3>; [33.00%]
+  else
+    goto <bb 4>; [67.00%]
+
+  <bb 3> [local count: 354334800]:
+  std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::_M_gen_rand (this_13(D));
+
+  <bb 4> [local count: 1073741824]:
+  _2 = this_13(D)->_M_p;
+  _3 = _2 + 1;
+  this_13(D)->_M_p = _3;
+  __z_16 = this_13(D)->_M_x[_2];
+  _4 = __z_16 >> 29;
+  _5 = _4 & 6148914691236517205;
+  __z_17 = _5 ^ __z_16;
+  _6 = __z_17 << 17;
+  _7 = _6 & 8202884508482404352;
+  __z_18 = _7 ^ __z_17;
+  _8 = __z_18 << 37;
+  _9 = _8 & 18444473444759240704;
+  __z_19 = _9 ^ __z_18;
+  _10 = __z_19 >> 43;
+  __z_20 = _10 ^ __z_19;
+  return __z_20;
+
+}
+
+
+
+;; Function std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::operator() (_ZNSt26subtract_with_carry_engineImLm24ELm10ELm24EEclEv, funcdef_no=4730, decl_uid=76848, cgraph_uid=2031, symbol_order=2745)
+
+Removing basic block 8
+Removing basic block 10
+result_type std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::operator() (struct subtract_with_carry_engine * const this)
+{
+  long unsigned int __xi;
+  long int __ps;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _10;
+  long unsigned int _20;
+  long unsigned int cstore_27;
+  long unsigned int cstore_28;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = this_16(D)->_M_p;
+  _2 = _1 + 18446744073709551606;
+  __ps_17 = (long int) _2;
+  if (__ps_17 < 0)
+    goto <bb 3>; [41.00%]
+  else
+    goto <bb 4>; [59.00%]
+
+  <bb 3> [local count: 440234144]:
+  _3 = _1 + 14;
+  __ps_18 = (long int) _3;
+
+  <bb 4> [local count: 1073741824]:
+  # __ps_11 = PHI <__ps_17(2), __ps_18(3)>
+  _4 = this_16(D)->_M_x[__ps_11];
+  _5 = this_16(D)->_M_x[_1];
+  _6 = this_16(D)->_M_carry;
+  _7 = _5 + _6;
+  if (_4 >= _7)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 5> [local count: 536870912]:
+  __xi_21 = _4 - _7;
+  goto <bb 7>; [100.00%]
+
+  <bb 6> [local count: 536870912]:
+  _20 = 16777216 - _7;
+  __xi_19 = _4 + _20;
+
+  <bb 7> [local count: 1073741824]:
+  # __xi_12 = PHI <__xi_21(5), __xi_19(6)>
+  # cstore_28 = PHI <0(5), 1(6)>
+  this_16(D)->_M_carry = cstore_28;
+  this_16(D)->_M_x[_1] = __xi_12;
+  _10 = _1 + 1;
+  if (_10 > 23)
+    goto <bb 8>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 8> [local count: 536870912]:
+
+  <bb 9> [local count: 1073741824]:
+  # cstore_27 = PHI <_10(7), 0(8)>
+  MEM <struct subtract_with_carry_engine> [(void *)this_16(D)]._M_p = cstore_27;
+  return __xi_12;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24> > (_ZNSt24uniform_int_distributionIiEclISt26subtract_with_carry_engineImLm24ELm10ELm24EEEEiRT_RKNS0_10param_typeE, funcdef_no=4724, decl_uid=93953, cgraph_uid=2027, symbol_order=2737)
+
+Removing basic block 11
+Removing basic block 12
+Removing basic block 13
+result_type std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24> > (struct uniform_int_distribution * const this, struct subtract_with_carry_engine & __urng, const struct param_type & __param)
+{
+  __uctype __tmp;
+  const __uctype __past;
+  const __uctype __scaling;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.94074;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  bool _7;
+  bool _8;
+  bool _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned int _12;
+  int _19;
+  int _20;
+  int _27;
+  int _38;
+  result_type _39;
+
+  <bb 2> [local count: 236223200]:
+  _20 = __param_18(D)->_M_b;
+  _1 = (long unsigned int) _20;
+  _38 = __param_18(D)->_M_a;
+  _2 = (long unsigned int) _38;
+  __urange_21 = _1 - _2;
+  if (__urange_21 <= 16777214)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  __uerange_32 = __urange_21 + 1;
+  __scaling_33 = 16777215 / __uerange_32;
+  __past_34 = __uerange_32 * __scaling_33;
+
+  <bb 4> [local count: 1073741824]:
+  __ret_36 = std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::operator() (__urng_22(D));
+  if (__past_34 <= __ret_36)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  __ret_37 = __ret_36 / __scaling_33;
+  goto <bb 10>; [100.00%]
+
+  <bb 6> [local count: 118111600]:
+  if (__urange_21 > 16777215)
+    goto <bb 7>; [67.00%]
+  else
+    goto <bb 9>; [33.00%]
+
+  <bb 7> [local count: 79134772]:
+  _3 = __urange_21 / 16777216;
+  _4 = (int) _3;
+
+  <bb 8> [local count: 212600880]:
+  D.94074 ={v} {CLOBBER(bob)};
+  D.94074._M_a = 0;
+  D.94074._M_b = _4;
+  _27 = std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24> > (this_25(D), __urng_22(D), &D.94074);
+  _5 = (long unsigned int) _27;
+  __tmp_28 = _5 * 16777216;
+  D.94074 ={v} {CLOBBER(eos)};
+  _6 = std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::operator() (__urng_22(D));
+  __ret_31 = _6 + __tmp_28;
+  _7 = __urange_21 < __ret_31;
+  _8 = __tmp_28 > __ret_31;
+  _9 = _7 | _8;
+  if (_9 != 0)
+    goto <bb 8>; [78.00%]
+  else
+    goto <bb 10>; [22.00%]
+
+  <bb 9> [local count: 38976828]:
+  __ret_24 = std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::operator() (__urng_22(D));
+
+  <bb 10> [local count: 236223200]:
+  # __ret_13 = PHI <__ret_37(5), __ret_31(8), __ret_24(9)>
+  _19 = __param_18(D)->_M_a;
+  _10 = (unsigned int) _19;
+  _11 = (unsigned int) __ret_13;
+  _12 = _10 + _11;
+  _39 = (result_type) _12;
+  return _39;
+
+}
+
+
+
+;; Function std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::operator() (_ZNSt26subtract_with_carry_engineImLm48ELm5ELm12EEclEv, funcdef_no=4737, decl_uid=76961, cgraph_uid=2038, symbol_order=2756)
+
+Removing basic block 8
+Removing basic block 10
+result_type std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::operator() (struct subtract_with_carry_engine * const this)
+{
+  long unsigned int __xi;
+  long int __ps;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _10;
+  long unsigned int _20;
+  long unsigned int cstore_27;
+  long unsigned int cstore_28;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = this_16(D)->_M_p;
+  _2 = _1 + 18446744073709551611;
+  __ps_17 = (long int) _2;
+  if (__ps_17 < 0)
+    goto <bb 3>; [41.00%]
+  else
+    goto <bb 4>; [59.00%]
+
+  <bb 3> [local count: 440234144]:
+  _3 = _1 + 7;
+  __ps_18 = (long int) _3;
+
+  <bb 4> [local count: 1073741824]:
+  # __ps_11 = PHI <__ps_17(2), __ps_18(3)>
+  _4 = this_16(D)->_M_x[__ps_11];
+  _5 = this_16(D)->_M_x[_1];
+  _6 = this_16(D)->_M_carry;
+  _7 = _5 + _6;
+  if (_4 >= _7)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 5> [local count: 536870912]:
+  __xi_21 = _4 - _7;
+  goto <bb 7>; [100.00%]
+
+  <bb 6> [local count: 536870912]:
+  _20 = 281474976710656 - _7;
+  __xi_19 = _4 + _20;
+
+  <bb 7> [local count: 1073741824]:
+  # __xi_12 = PHI <__xi_21(5), __xi_19(6)>
+  # cstore_28 = PHI <0(5), 1(6)>
+  this_16(D)->_M_carry = cstore_28;
+  this_16(D)->_M_x[_1] = __xi_12;
+  _10 = _1 + 1;
+  if (_10 > 11)
+    goto <bb 8>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 8> [local count: 536870912]:
+
+  <bb 9> [local count: 1073741824]:
+  # cstore_27 = PHI <_10(7), 0(8)>
+  MEM <struct subtract_with_carry_engine> [(void *)this_16(D)]._M_p = cstore_27;
+  return __xi_12;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12> > (_ZNSt24uniform_int_distributionIiEclISt26subtract_with_carry_engineImLm48ELm5ELm12EEEEiRT_RKNS0_10param_typeE, funcdef_no=4731, decl_uid=94083, cgraph_uid=2034, symbol_order=2748)
+
+Removing basic block 8
+Removing basic block 9
+Removing basic block 10
+Removing basic block 11
+result_type std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12> > (struct uniform_int_distribution * const this, struct subtract_with_carry_engine & __urng, const struct param_type & __param)
+{
+  __uctype __tmp;
+  const __uctype __past;
+  const __uctype __scaling;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.94158;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _5;
+  long unsigned int _6;
+  bool _7;
+  bool _8;
+  bool _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned int _12;
+  int _19;
+  int _20;
+  int _27;
+  int _38;
+  result_type _39;
+
+  <bb 2> [local count: 236223200]:
+  _20 = __param_18(D)->_M_b;
+  _1 = (long unsigned int) _20;
+  _38 = __param_18(D)->_M_a;
+  _2 = (long unsigned int) _38;
+  __urange_21 = _1 - _2;
+  if (__urange_21 <= 281474976710654)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  __uerange_32 = __urange_21 + 1;
+  __scaling_33 = 281474976710655 / __uerange_32;
+  __past_34 = __uerange_32 * __scaling_33;
+
+  <bb 4> [local count: 1073741824]:
+  __ret_36 = std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::operator() (__urng_22(D));
+  if (__past_34 <= __ret_36)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  __ret_37 = __ret_36 / __scaling_33;
+  goto <bb 7>; [100.00%]
+
+  <bb 6> [local count: 212600880]:
+  D.94158 ={v} {CLOBBER(bob)};
+  D.94158._M_a = 0;
+  D.94158._M_b = 65535;
+  _27 = std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12> > (this_25(D), __urng_22(D), &D.94158);
+  _5 = (long unsigned int) _27;
+  __tmp_28 = _5 * 281474976710656;
+  D.94158 ={v} {CLOBBER(eos)};
+  _6 = std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::operator() (__urng_22(D));
+  __ret_31 = _6 + __tmp_28;
+  _7 = __urange_21 < __ret_31;
+  _8 = __tmp_28 > __ret_31;
+  _9 = _7 | _8;
+  if (_9 != 0)
+    goto <bb 6>; [78.00%]
+  else
+    goto <bb 7>; [22.00%]
+
+  <bb 7> [local count: 236223200]:
+  # __ret_13 = PHI <__ret_37(5), __ret_31(6)>
+  _19 = __param_18(D)->_M_a;
+  _10 = (unsigned int) _19;
+  _11 = (unsigned int) __ret_13;
+  _12 = _10 + _11;
+  _39 = (result_type) _12;
+  return _39;
+
+}
+
+
+
+;; Function std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>::operator() (_ZNSt20discard_block_engineISt26subtract_with_carry_engineImLm24ELm10ELm24EELm223ELm23EEclEv, funcdef_no=4744, decl_uid=77074, cgraph_uid=2045, symbol_order=2767)
+
+Removing basic block 7
+Removing basic block 8
+Removing basic block 9
+Removing basic block 10
+Removing basic block 11
+result_type std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>::operator() (struct discard_block_engine * const this)
+{
+  long long unsigned int __z;
+  long unsigned int _1;
+  struct subtract_with_carry_engine * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  struct subtract_with_carry_engine * _6;
+  result_type _13;
+
+  <bb 2> [local count: 236223200]:
+  _1 = this_9(D)->_M_n;
+  if (_1 > 22)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  _2 = &this_9(D)->_M_b;
+  _3 = 223 - _1;
+  if (_3 != 0)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 4> [local count: 955630224]:
+  # __z_20 = PHI <__z_15(4), _3(3)>
+  std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::operator() (_2);
+  __z_15 = __z_20 + 18446744073709551615;
+  if (__z_15 != 0)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  this_9(D)->_M_n = 0;
+
+  <bb 6> [local count: 236223200]:
+  _4 = this_9(D)->_M_n;
+  _5 = _4 + 1;
+  this_9(D)->_M_n = _5;
+  _6 = &this_9(D)->_M_b;
+  _13 = std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::operator() (_6);
+  return _13;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23> > (_ZNSt24uniform_int_distributionIiEclISt20discard_block_engineISt26subtract_with_carry_engineImLm24ELm10ELm24EELm223ELm23EEEEiRT_RKNS0_10param_typeE, funcdef_no=4738, decl_uid=94169, cgraph_uid=2041, symbol_order=2759)
+
+Removing basic block 11
+Removing basic block 12
+Removing basic block 13
+result_type std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23> > (struct uniform_int_distribution * const this, struct discard_block_engine & __urng, const struct param_type & __param)
+{
+  __uctype __tmp;
+  const __uctype __past;
+  const __uctype __scaling;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.94228;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  bool _6;
+  bool _7;
+  bool _8;
+  unsigned int _9;
+  unsigned int _10;
+  unsigned int _11;
+  int _18;
+  int _19;
+  __uctype _23;
+  int _26;
+  long unsigned int _30;
+  __uctype _36;
+  int _38;
+  result_type _39;
+
+  <bb 2> [local count: 236223200]:
+  _19 = __param_17(D)->_M_b;
+  _1 = (long unsigned int) _19;
+  _38 = __param_17(D)->_M_a;
+  _2 = (long unsigned int) _38;
+  __urange_20 = _1 - _2;
+  if (__urange_20 <= 16777214)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  __uerange_32 = __urange_20 + 1;
+  __scaling_33 = 16777215 / __uerange_32;
+  __past_34 = __uerange_32 * __scaling_33;
+
+  <bb 4> [local count: 1073741824]:
+  _36 = std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>::operator() (__urng_21(D));
+  if (__past_34 <= _36)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  __ret_37 = _36 / __scaling_33;
+  goto <bb 10>; [100.00%]
+
+  <bb 6> [local count: 118111600]:
+  if (__urange_20 > 16777215)
+    goto <bb 7>; [67.00%]
+  else
+    goto <bb 9>; [33.00%]
+
+  <bb 7> [local count: 79134772]:
+  _3 = __urange_20 / 16777216;
+  _4 = (int) _3;
+
+  <bb 8> [local count: 212600880]:
+  D.94228 ={v} {CLOBBER(bob)};
+  D.94228._M_a = 0;
+  D.94228._M_b = _4;
+  _26 = std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23> > (this_24(D), __urng_21(D), &D.94228);
+  _5 = (long unsigned int) _26;
+  __tmp_27 = _5 * 16777216;
+  D.94228 ={v} {CLOBBER(eos)};
+  _30 = std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>::operator() (__urng_21(D));
+  __ret_31 = __tmp_27 + _30;
+  _6 = __urange_20 < __ret_31;
+  _7 = __tmp_27 > __ret_31;
+  _8 = _6 | _7;
+  if (_8 != 0)
+    goto <bb 8>; [78.00%]
+  else
+    goto <bb 10>; [22.00%]
+
+  <bb 9> [local count: 38976828]:
+  _23 = std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>::operator() (__urng_21(D));
+
+  <bb 10> [local count: 236223200]:
+  # __ret_12 = PHI <__ret_37(5), __ret_31(8), _23(9)>
+  _18 = __param_17(D)->_M_a;
+  _9 = (unsigned int) _18;
+  _10 = (unsigned int) __ret_12;
+  _11 = _9 + _10;
+  _39 = (result_type) _11;
+  return _39;
+
+}
+
+
+
+;; Function generate<9, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4750, decl_uid=94269, cgraph_uid=2051, symbol_order=2777)
+
+type generate<9, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96182;
+  long unsigned int __res;
+  struct forward_iterator_tag D.96156;
+  const struct string D.96150;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  unsigned int _21;
+  struct basic_ostream & _25;
+  int _28;
+  char * _41;
+  void * _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  int (*) () * _55;
+  long int _56;
+  sizetype _57;
+  struct basic_ios * _58;
+  int _60;
+  struct basic_ostream & _61;
+  const struct __ctype_type * _63;
+  unsigned int ivtmp_65;
+  char _67;
+  char _70;
+  int (*) () * _71;
+  int (*) () _72;
+  char _74;
+  char _75;
+  long unsigned int _77;
+  unsigned int ivtmp_79;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct linear_congruential_engine *)&engine] ={v} {CLOBBER(bob)};
+  engine._M_x = 1;
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96150] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96150] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96150]._M_p = &D.96150.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96150, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96156);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96150);
+
+  <bb 6> [local count: 16104516]:
+  _41 = D.96150._M_dataplus._M_p;
+  if (&D.96150.D.28283._M_local_buf == _41)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _44 = D.96150.D.28283._M_allocated_capacity;
+  _45 = _44 + 1;
+  operator delete (_41, _45);
+
+  <bb 8> [local count: 16104516]:
+  D.96150 ={v} {CLOBBER(eob)};
+  D.96150 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96150);
+  D.96150 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  goto <bb 14>; [100.00%]
+
+  <bb 13> [local count: 976138696]:
+  # ivtmp_65 = PHI <ivtmp_79(13), 10(14)>
+  _21 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _21;
+  __res_54 = _5 % 2147483647;
+  _77 = MAX_EXPR <__res_54, 1>;
+  engine._M_x = _77;
+  _28 = std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (&val, &engine, &val._M_param);
+  _25 = std::basic_ostream<char>::operator<< (&cout, _28);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_79 = ivtmp_65 + 4294967295;
+  if (ivtmp_79 != 0)
+    goto <bb 13>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 14> [local count: 97603128]:
+  goto <bb 13>; [100.00%]
+
+  <bb 15> [local count: 97603128]:
+  _55 = cout._vptr.basic_ostream;
+  _56 = MEM[(long int *)_55 + -24B];
+  _57 = (sizetype) _56;
+  _58 = &cout + _57;
+  _63 = MEM[(const struct basic_ios *)_58]._M_ctype;
+  if (_63 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _67 = MEM[(const struct ctype *)_63]._M_widen_ok;
+  if (_67 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _70 = MEM[(const struct ctype *)_63]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_63);
+  _71 = MEM[(const struct ctype *)_63].D.44110._vptr.facet;
+  _72 = MEM[(int (*) () *)_71 + 48B];
+  _74 = OBJ_TYPE_REF(_72;(const struct ctype)_63->6B) (_63, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _75 = PHI <_70(18), _74(19)>
+  _60 = (int) _75;
+  _61 = std::basic_ostream<char>::put (&cout, _60);
+  std::basic_ostream<char>::flush (_61);
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96156 ={v} {CLOBBER};
+  D.96150 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm9EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _43 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_43);
+
+}
+
+
+
+;; Function std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>::operator() (_ZNSt20discard_block_engineISt26subtract_with_carry_engineImLm48ELm5ELm12EELm389ELm11EEclEv, funcdef_no=4752, decl_uid=77200, cgraph_uid=2053, symbol_order=2779)
+
+Removing basic block 7
+Removing basic block 8
+Removing basic block 9
+Removing basic block 10
+Removing basic block 11
+result_type std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>::operator() (struct discard_block_engine * const this)
+{
+  long long unsigned int __z;
+  long unsigned int _1;
+  struct subtract_with_carry_engine * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  struct subtract_with_carry_engine * _6;
+  result_type _13;
+
+  <bb 2> [local count: 236223200]:
+  _1 = this_9(D)->_M_n;
+  if (_1 > 10)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  _2 = &this_9(D)->_M_b;
+  _3 = 389 - _1;
+  if (_3 != 0)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 4> [local count: 955630224]:
+  # __z_20 = PHI <__z_15(4), _3(3)>
+  std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::operator() (_2);
+  __z_15 = __z_20 + 18446744073709551615;
+  if (__z_15 != 0)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  this_9(D)->_M_n = 0;
+
+  <bb 6> [local count: 236223200]:
+  _4 = this_9(D)->_M_n;
+  _5 = _4 + 1;
+  this_9(D)->_M_n = _5;
+  _6 = &this_9(D)->_M_b;
+  _13 = std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::operator() (_6);
+  return _13;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11> > (_ZNSt24uniform_int_distributionIiEclISt20discard_block_engineISt26subtract_with_carry_engineImLm48ELm5ELm12EELm389ELm11EEEEiRT_RKNS0_10param_typeE, funcdef_no=4745, decl_uid=94239, cgraph_uid=2048, symbol_order=2770)
+
+Removing basic block 8
+Removing basic block 9
+Removing basic block 10
+Removing basic block 11
+result_type std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11> > (struct uniform_int_distribution * const this, struct discard_block_engine & __urng, const struct param_type & __param)
+{
+  __uctype __tmp;
+  const __uctype __past;
+  const __uctype __scaling;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.94296;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _5;
+  bool _6;
+  bool _7;
+  bool _8;
+  unsigned int _9;
+  unsigned int _10;
+  unsigned int _11;
+  int _18;
+  int _19;
+  int _26;
+  long unsigned int _30;
+  __uctype _36;
+  int _38;
+  result_type _39;
+
+  <bb 2> [local count: 236223200]:
+  _19 = __param_17(D)->_M_b;
+  _1 = (long unsigned int) _19;
+  _38 = __param_17(D)->_M_a;
+  _2 = (long unsigned int) _38;
+  __urange_20 = _1 - _2;
+  if (__urange_20 <= 281474976710654)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  __uerange_32 = __urange_20 + 1;
+  __scaling_33 = 281474976710655 / __uerange_32;
+  __past_34 = __uerange_32 * __scaling_33;
+
+  <bb 4> [local count: 1073741824]:
+  _36 = std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>::operator() (__urng_21(D));
+  if (__past_34 <= _36)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  __ret_37 = _36 / __scaling_33;
+  goto <bb 7>; [100.00%]
+
+  <bb 6> [local count: 212600880]:
+  D.94296 ={v} {CLOBBER(bob)};
+  D.94296._M_a = 0;
+  D.94296._M_b = 65535;
+  _26 = std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11> > (this_24(D), __urng_21(D), &D.94296);
+  _5 = (long unsigned int) _26;
+  __tmp_27 = _5 * 281474976710656;
+  D.94296 ={v} {CLOBBER(eos)};
+  _30 = std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>::operator() (__urng_21(D));
+  __ret_31 = __tmp_27 + _30;
+  _6 = __urange_20 < __ret_31;
+  _7 = __tmp_27 > __ret_31;
+  _8 = _6 | _7;
+  if (_8 != 0)
+    goto <bb 6>; [78.00%]
+  else
+    goto <bb 7>; [22.00%]
+
+  <bb 7> [local count: 236223200]:
+  # __ret_12 = PHI <__ret_37(5), __ret_31(6)>
+  _18 = __param_17(D)->_M_a;
+  _9 = (unsigned int) _18;
+  _10 = (unsigned int) __ret_12;
+  _11 = _9 + _10;
+  _39 = (result_type) _11;
+  return _39;
+
+}
+
+
+
+;; Function std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>::operator() (_ZNSt20shuffle_order_engineISt26linear_congruential_engineImLm16807ELm0ELm2147483647EELm256EEclEv, funcdef_no=4758, decl_uid=77320, cgraph_uid=2061, symbol_order=2787)
+
+result_type std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>::operator() (struct shuffle_order_engine * const this)
+{
+  long unsigned int __res;
+  const result_type __y;
+  size_t __j;
+  long unsigned int _1;
+  double _2;
+  double _3;
+  double _4;
+  long unsigned int _5;
+  long unsigned int _12;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = this_7(D)->_M_y;
+  __y_8 = _1 + 18446744073709551615;
+  _2 = (double) __y_8;
+  _3 = _2 / 2.147483646e+9;
+  _4 = _3 * 2.56e+2;
+  __j_9 = (size_t) _4;
+  _5 = this_7(D)->_M_v[__j_9];
+  this_7(D)->_M_y = _5;
+  _12 = MEM[(struct linear_congruential_engine *)this_7(D)]._M_x;
+  __res_13 = _12 * 16807;
+  __res_14 = __res_13 % 2147483647;
+  MEM[(struct linear_congruential_engine *)this_7(D)]._M_x = __res_14;
+  this_7(D)->_M_v[__j_9] = __res_14;
+  return _5;
+
+}
+
+
+
+;; Function std::uniform_int_distribution<int>::operator()<std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256> > (_ZNSt24uniform_int_distributionIiEclISt20shuffle_order_engineISt26linear_congruential_engineImLm16807ELm0ELm2147483647EELm256EEEEiRT_RKNS0_10param_typeE, funcdef_no=4753, decl_uid=94307, cgraph_uid=2056, symbol_order=2782)
+
+Removing basic block 11
+Removing basic block 12
+Removing basic block 13
+result_type std::uniform_int_distribution<int>::operator()<std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256> > (struct uniform_int_distribution * const this, struct shuffle_order_engine & __urng, const struct param_type & __param)
+{
+  __uctype __tmp;
+  const __uctype __past;
+  const __uctype __scaling;
+  const __uctype __uerange;
+  __uctype __ret;
+  const __uctype __urange;
+  struct param_type D.94370;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  bool _7;
+  bool _8;
+  bool _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned int _12;
+  int _19;
+  int _20;
+  long unsigned int _24;
+  int _28;
+  long unsigned int _32;
+  long unsigned int _38;
+  int _41;
+  result_type _42;
+  long unsigned int _46;
+
+  <bb 2> [local count: 236223200]:
+  _20 = __param_18(D)->_M_b;
+  _1 = (long unsigned int) _20;
+  _41 = __param_18(D)->_M_a;
+  _2 = (long unsigned int) _41;
+  __urange_21 = _1 - _2;
+  if (__urange_21 <= 2147483644)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 118111600]:
+  __uerange_34 = __urange_21 + 1;
+  __scaling_35 = 2147483645 / __uerange_34;
+  __past_36 = __uerange_34 * __scaling_35;
+
+  <bb 4> [local count: 1073741824]:
+  _38 = std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>::operator() (__urng_22(D));
+  __ret_39 = _38 + 18446744073709551615;
+  if (__past_36 <= __ret_39)
+    goto <bb 4>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  __ret_40 = __ret_39 / __scaling_35;
+  goto <bb 10>; [100.00%]
+
+  <bb 6> [local count: 118111600]:
+  if (__urange_21 > 2147483645)
+    goto <bb 7>; [67.00%]
+  else
+    goto <bb 9>; [33.00%]
+
+  <bb 7> [local count: 79134772]:
+  _3 = __urange_21 / 2147483646;
+  _4 = (int) _3;
+
+  <bb 8> [local count: 212600880]:
+  D.94370 ={v} {CLOBBER(bob)};
+  D.94370._M_a = 0;
+  D.94370._M_b = _4;
+  _28 = std::uniform_int_distribution<int>::operator()<std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256> > (this_26(D), __urng_22(D), &D.94370);
+  _5 = (long unsigned int) _28;
+  __tmp_29 = _5 * 2147483646;
+  D.94370 ={v} {CLOBBER(eos)};
+  _32 = std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>::operator() (__urng_22(D));
+  _46 = _32 + 18446744073709551615;
+  __ret_33 = __tmp_29 + _46;
+  _7 = __urange_21 < __ret_33;
+  _8 = __tmp_29 > __ret_33;
+  _9 = _7 | _8;
+  if (_9 != 0)
+    goto <bb 8>; [78.00%]
+  else
+    goto <bb 10>; [22.00%]
+
+  <bb 9> [local count: 38976828]:
+  _24 = std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>::operator() (__urng_22(D));
+  __ret_25 = _24 + 18446744073709551615;
+
+  <bb 10> [local count: 236223200]:
+  # __ret_13 = PHI <__ret_40(5), __ret_33(8), __ret_25(9)>
+  _19 = __param_18(D)->_M_a;
+  _10 = (unsigned int) _19;
+  _11 = (unsigned int) __ret_13;
+  _12 = _10 + _11;
+  _42 = (result_type) _12;
+  return _42;
+
+}
+
+
+
+;; Function generate<8, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4743, decl_uid=94199, cgraph_uid=2044, symbol_order=2766)
+
+type generate<8, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96266;
+  unsigned long ivtmp.392;
+  unsigned long ivtmp.377;
+  long unsigned int engine___M_x_lsm.370;
+  long unsigned int engine___M_x_lsm.369;
+  long unsigned int __res;
+  long unsigned int __res;
+  long unsigned int __res;
+  struct forward_iterator_tag D.96214;
+  const struct string D.96208;
+  long unsigned int __res;
+  long unsigned int __res;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  long unsigned int _19;
+  struct basic_ostream & _25;
+  unsigned int _28;
+  int _29;
+  char * _51;
+  unsigned int ivtmp_52;
+  void * _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  unsigned long _56;
+  unsigned long _57;
+  int (*) () * _73;
+  long int _74;
+  sizetype _75;
+  struct basic_ios * _76;
+  int _78;
+  struct basic_ostream & _79;
+  const struct __ctype_type * _81;
+  char _85;
+  char _88;
+  int (*) () * _89;
+  int (*) () _90;
+  char _92;
+  char _93;
+  void * _105;
+  void * _117;
+  unsigned int ivtmp_135;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct shuffle_order_engine *)&engine] ={v} {CLOBBER(bob)};
+  MEM[(struct linear_congruential_engine *)&engine] ={v} {CLOBBER(bob)};
+  ivtmp.392_38 = (unsigned long) &MEM <struct EngineType> [(void *)&engine + 8B];
+  _56 = (unsigned long) &engine;
+  _57 = _56 + 2056;
+
+  <bb 3> [local count: 9662711708]:
+  # engine___M_x_lsm.370_69 = PHI <__res_41(3), 1(2)>
+  # ivtmp.392_48 = PHI <ivtmp.392_47(3), ivtmp.392_38(2)>
+  __res_40 = engine___M_x_lsm.370_69 * 16807;
+  __res_41 = __res_40 % 2147483647;
+  _117 = (void *) ivtmp.392_48;
+  MEM[(long unsigned int *)_117] = __res_41;
+  ivtmp.392_47 = ivtmp.392_48 + 8;
+  if (ivtmp.392_47 != _57)
+    goto <bb 3>; [98.99%]
+  else
+    goto <bb 4>; [1.01%]
+
+  <bb 4> [local count: 97603128]:
+  engine._M_v[255] = __res_41;
+  __res_45 = __res_41 * 16807;
+  __res_46 = __res_45 % 2147483647;
+  MEM[(struct linear_congruential_engine *)&engine]._M_x = __res_46;
+  engine._M_y = __res_46;
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 5> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 6>; [33.00%]
+  else
+    goto <bb 12>; [67.00%]
+
+  <bb 6> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96208] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96208] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96208]._M_p = &D.96208.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96208, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96214);
+
+  <bb 7> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96208);
+
+  <bb 8> [local count: 16104516]:
+  _51 = D.96208._M_dataplus._M_p;
+  if (&D.96208.D.28283._M_local_buf == _51)
+    goto <bb 10>; [18.09%]
+  else
+    goto <bb 9>; [81.91%]
+
+  <bb 9> [local count: 13191209]:
+  _54 = D.96208.D.28283._M_allocated_capacity;
+  _55 = _54 + 1;
+  operator delete (_51, _55);
+
+  <bb 10> [local count: 16104516]:
+  D.96208 ={v} {CLOBBER(eob)};
+  D.96208 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 12>; [100.00%]
+
+  <bb 11> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96208);
+  D.96208 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 25>; [100.00%]
+
+  <bb 12> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 13>; [33.00%]
+  else
+    goto <bb 18>; [67.00%]
+
+  <bb 13> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 14>; [33.00%]
+  else
+    goto <bb 18>; [67.00%]
+
+  <bb 14> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  goto <bb 18>; [100.00%]
+
+  <bb 15> [local count: 976138696]:
+  # ivtmp_135 = PHI <ivtmp_52(17), 10(18)>
+  _28 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _28;
+  __res_72 = _5 % 2147483647;
+  _19 = MAX_EXPR <__res_72, 1>;
+
+  <bb 16> [local count: 96637751268]:
+  # engine___M_x_lsm.369_99 = PHI <__res_66(16), _19(15)>
+  # ivtmp.377_91 = PHI <ivtmp.377_64(16), ivtmp.392_38(15)>
+  __res_65 = engine___M_x_lsm.369_99 * 16807;
+  __res_66 = __res_65 % 2147483647;
+  _105 = (void *) ivtmp.377_91;
+  MEM[(long unsigned int *)_105] = __res_66;
+  ivtmp.377_64 = ivtmp.377_91 + 8;
+  if (_57 != ivtmp.377_64)
+    goto <bb 16>; [98.99%]
+  else
+    goto <bb 17>; [1.01%]
+
+  <bb 17> [local count: 976138696]:
+  engine._M_v[255] = __res_66;
+  __res_70 = __res_66 * 16807;
+  __res_71 = __res_70 % 2147483647;
+  MEM[(struct linear_congruential_engine *)&engine]._M_x = __res_71;
+  engine._M_y = __res_71;
+  _29 = std::uniform_int_distribution<int>::operator()<std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256> > (&val, &engine, &val._M_param);
+  _25 = std::basic_ostream<char>::operator<< (&cout, _29);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_52 = ivtmp_135 + 4294967295;
+  if (ivtmp_52 != 0)
+    goto <bb 15>; [90.00%]
+  else
+    goto <bb 19>; [10.00%]
+
+  <bb 18> [local count: 97603128]:
+  goto <bb 15>; [100.00%]
+
+  <bb 19> [local count: 97603128]:
+  _73 = cout._vptr.basic_ostream;
+  _74 = MEM[(long int *)_73 + -24B];
+  _75 = (sizetype) _74;
+  _76 = &cout + _75;
+  _81 = MEM[(const struct basic_ios *)_76]._M_ctype;
+  if (_81 == 0B)
+    goto <bb 20>; [0.00%]
+  else
+    goto <bb 21>; [100.00%]
+
+  <bb 20> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 21> [local count: 97603128]:
+  _85 = MEM[(const struct ctype *)_81]._M_widen_ok;
+  if (_85 != 0)
+    goto <bb 22>; [51.12%]
+  else
+    goto <bb 23>; [48.88%]
+
+  <bb 22> [local count: 49894719]:
+  _88 = MEM[(const struct ctype *)_81]._M_widen[10];
+  goto <bb 24>; [100.00%]
+
+  <bb 23> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_81);
+  _89 = MEM[(const struct ctype *)_81].D.44110._vptr.facet;
+  _90 = MEM[(int (*) () *)_89 + 48B];
+  _92 = OBJ_TYPE_REF(_90;(const struct ctype)_81->6B) (_81, 10);
+
+  <bb 24> [local count: 97603128]:
+  # _93 = PHI <_88(22), _92(23)>
+  _78 = (int) _93;
+  _79 = std::basic_ostream<char>::put (&cout, _78);
+  std::basic_ostream<char>::flush (_79);
+  generate<9, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_21(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 25> [count: 0]:
+<L15>:
+  D.96214 ={v} {CLOBBER};
+  D.96208 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm8EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _53 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_53);
+
+}
+
+
+
+;; Function generate<7, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4736, decl_uid=94113, cgraph_uid=2037, symbol_order=2755)
+
+type generate<7, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96299;
+  struct forward_iterator_tag D.96276;
+  const struct string D.96270;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  struct basic_ostream & _24;
+  unsigned int _27;
+  int _28;
+  char * _44;
+  void * _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  int (*) () * _57;
+  long int _58;
+  sizetype _59;
+  struct basic_ios * _60;
+  int _62;
+  struct basic_ostream & _63;
+  const struct __ctype_type * _65;
+  unsigned int ivtmp_67;
+  unsigned int ivtmp_68;
+  char _69;
+  char _72;
+  int (*) () * _73;
+  int (*) () _74;
+  char _76;
+  char _77;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct discard_block_engine *)&engine] ={v} {CLOBBER(bob)};
+  MEM[(struct subtract_with_carry_engine *)&engine] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (&engine._M_b, 0);
+  MEM[(struct discard_block_engine *)&engine]._M_n = 0;
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96270] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96270] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96270]._M_p = &D.96270.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96270, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96276);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96270);
+
+  <bb 6> [local count: 16104516]:
+  _44 = D.96270._M_dataplus._M_p;
+  if (&D.96270.D.28283._M_local_buf == _44)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _47 = D.96270.D.28283._M_allocated_capacity;
+  _48 = _47 + 1;
+  operator delete (_44, _48);
+
+  <bb 8> [local count: 16104516]:
+  D.96270 ={v} {CLOBBER(eob)};
+  D.96270 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96270);
+  D.96270 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+
+  <bb 13> [local count: 97603128]:
+
+  <bb 14> [local count: 976138696]:
+  # ivtmp_68 = PHI <ivtmp_67(14), 10(13)>
+  _27 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _27;
+  std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (&engine._M_b, _5);
+  engine._M_n = 0;
+  _28 = std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11> > (&val, &engine, &val._M_param);
+  _24 = std::basic_ostream<char>::operator<< (&cout, _28);
+  std::__ostream_insert<char, std::char_traits<char> > (_24, " ", 1);
+  ivtmp_67 = ivtmp_68 + 4294967295;
+  if (ivtmp_67 != 0)
+    goto <bb 14>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 15> [local count: 97603128]:
+  _57 = cout._vptr.basic_ostream;
+  _58 = MEM[(long int *)_57 + -24B];
+  _59 = (sizetype) _58;
+  _60 = &cout + _59;
+  _65 = MEM[(const struct basic_ios *)_60]._M_ctype;
+  if (_65 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _69 = MEM[(const struct ctype *)_65]._M_widen_ok;
+  if (_69 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _72 = MEM[(const struct ctype *)_65]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_65);
+  _73 = MEM[(const struct ctype *)_65].D.44110._vptr.facet;
+  _74 = MEM[(int (*) () *)_73 + 48B];
+  _76 = OBJ_TYPE_REF(_74;(const struct ctype)_65->6B) (_65, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _77 = PHI <_72(18), _76(19)>
+  _62 = (int) _77;
+  _63 = std::basic_ostream<char>::put (&cout, _62);
+  std::basic_ostream<char>::flush (_63);
+  generate<8, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96276 ={v} {CLOBBER};
+  D.96270 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm7EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _46 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_46);
+
+}
+
+
+
+;; Function generate<6, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4728, decl_uid=93984, cgraph_uid=2029, symbol_order=2743)
+
+type generate<6, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96332;
+  struct forward_iterator_tag D.96309;
+  const struct string D.96303;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  struct basic_ostream & _24;
+  unsigned int _27;
+  int _28;
+  char * _44;
+  void * _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  int (*) () * _57;
+  long int _58;
+  sizetype _59;
+  struct basic_ios * _60;
+  int _62;
+  struct basic_ostream & _63;
+  const struct __ctype_type * _65;
+  unsigned int ivtmp_67;
+  unsigned int ivtmp_68;
+  char _69;
+  char _72;
+  int (*) () * _73;
+  int (*) () _74;
+  char _76;
+  char _77;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct discard_block_engine *)&engine] ={v} {CLOBBER(bob)};
+  MEM[(struct subtract_with_carry_engine *)&engine] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (&engine._M_b, 0);
+  MEM[(struct discard_block_engine *)&engine]._M_n = 0;
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96303] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96303] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96303]._M_p = &D.96303.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96303, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96309);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96303);
+
+  <bb 6> [local count: 16104516]:
+  _44 = D.96303._M_dataplus._M_p;
+  if (&D.96303.D.28283._M_local_buf == _44)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _47 = D.96303.D.28283._M_allocated_capacity;
+  _48 = _47 + 1;
+  operator delete (_44, _48);
+
+  <bb 8> [local count: 16104516]:
+  D.96303 ={v} {CLOBBER(eob)};
+  D.96303 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96303);
+  D.96303 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+
+  <bb 13> [local count: 97603128]:
+
+  <bb 14> [local count: 976138696]:
+  # ivtmp_68 = PHI <ivtmp_67(14), 10(13)>
+  _27 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _27;
+  std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (&engine._M_b, _5);
+  engine._M_n = 0;
+  _28 = std::uniform_int_distribution<int>::operator()<std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23> > (&val, &engine, &val._M_param);
+  _24 = std::basic_ostream<char>::operator<< (&cout, _28);
+  std::__ostream_insert<char, std::char_traits<char> > (_24, " ", 1);
+  ivtmp_67 = ivtmp_68 + 4294967295;
+  if (ivtmp_67 != 0)
+    goto <bb 14>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 15> [local count: 97603128]:
+  _57 = cout._vptr.basic_ostream;
+  _58 = MEM[(long int *)_57 + -24B];
+  _59 = (sizetype) _58;
+  _60 = &cout + _59;
+  _65 = MEM[(const struct basic_ios *)_60]._M_ctype;
+  if (_65 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _69 = MEM[(const struct ctype *)_65]._M_widen_ok;
+  if (_69 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _72 = MEM[(const struct ctype *)_65]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_65);
+  _73 = MEM[(const struct ctype *)_65].D.44110._vptr.facet;
+  _74 = MEM[(int (*) () *)_73 + 48B];
+  _76 = OBJ_TYPE_REF(_74;(const struct ctype)_65->6B) (_65, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _77 = PHI <_72(18), _76(19)>
+  _62 = (int) _77;
+  _63 = std::basic_ostream<char>::put (&cout, _62);
+  std::basic_ostream<char>::flush (_63);
+  generate<7, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96309 ={v} {CLOBBER};
+  D.96303 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm6EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _46 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_46);
+
+}
+
+
+
+;; Function generate<5, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4715, decl_uid=93811, cgraph_uid=2016, symbol_order=2726)
+
+type generate<5, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96365;
+  struct forward_iterator_tag D.96342;
+  const struct string D.96336;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  struct basic_ostream & _25;
+  unsigned int _28;
+  int _29;
+  char * _41;
+  void * _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  int (*) () * _54;
+  long int _55;
+  sizetype _56;
+  struct basic_ios * _57;
+  int _59;
+  struct basic_ostream & _60;
+  const struct __ctype_type * _62;
+  unsigned int ivtmp_64;
+  unsigned int ivtmp_65;
+  char _66;
+  char _69;
+  int (*) () * _70;
+  int (*) () _71;
+  char _73;
+  char _74;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct subtract_with_carry_engine *)&engine] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (&engine, 0);
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96336] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96336] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96336]._M_p = &D.96336.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96336, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96342);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96336);
+
+  <bb 6> [local count: 16104516]:
+  _41 = D.96336._M_dataplus._M_p;
+  if (&D.96336.D.28283._M_local_buf == _41)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _44 = D.96336.D.28283._M_allocated_capacity;
+  _45 = _44 + 1;
+  operator delete (_41, _45);
+
+  <bb 8> [local count: 16104516]:
+  D.96336 ={v} {CLOBBER(eob)};
+  D.96336 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96336);
+  D.96336 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+
+  <bb 13> [local count: 97603128]:
+
+  <bb 14> [local count: 976138696]:
+  # ivtmp_65 = PHI <ivtmp_64(14), 10(13)>
+  _28 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _28;
+  std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (&engine, _5);
+  _29 = std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12> > (&val, &engine, &val._M_param);
+  _25 = std::basic_ostream<char>::operator<< (&cout, _29);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_64 = ivtmp_65 + 4294967295;
+  if (ivtmp_64 != 0)
+    goto <bb 14>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 15> [local count: 97603128]:
+  _54 = cout._vptr.basic_ostream;
+  _55 = MEM[(long int *)_54 + -24B];
+  _56 = (sizetype) _55;
+  _57 = &cout + _56;
+  _62 = MEM[(const struct basic_ios *)_57]._M_ctype;
+  if (_62 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _66 = MEM[(const struct ctype *)_62]._M_widen_ok;
+  if (_66 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _69 = MEM[(const struct ctype *)_62]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_62);
+  _70 = MEM[(const struct ctype *)_62].D.44110._vptr.facet;
+  _71 = MEM[(int (*) () *)_70 + 48B];
+  _73 = OBJ_TYPE_REF(_71;(const struct ctype)_62->6B) (_62, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _74 = PHI <_69(18), _73(19)>
+  _59 = (int) _74;
+  _60 = std::basic_ostream<char>::put (&cout, _59);
+  std::basic_ostream<char>::flush (_60);
+  generate<6, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96342 ={v} {CLOBBER};
+  D.96336 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm5EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _43 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_43);
+
+}
+
+
+
+;; Function generate<4, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4693, decl_uid=93631, cgraph_uid=1994, symbol_order=2696)
+
+type generate<4, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96398;
+  struct forward_iterator_tag D.96375;
+  const struct string D.96369;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  struct basic_ostream & _25;
+  unsigned int _28;
+  int _29;
+  char * _41;
+  void * _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  int (*) () * _54;
+  long int _55;
+  sizetype _56;
+  struct basic_ios * _57;
+  int _59;
+  struct basic_ostream & _60;
+  const struct __ctype_type * _62;
+  unsigned int ivtmp_64;
+  unsigned int ivtmp_65;
+  char _66;
+  char _69;
+  int (*) () * _70;
+  int (*) () _71;
+  char _73;
+  char _74;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct subtract_with_carry_engine *)&engine] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (&engine, 0);
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96369] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96369] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96369]._M_p = &D.96369.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96369, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96375);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96369);
+
+  <bb 6> [local count: 16104516]:
+  _41 = D.96369._M_dataplus._M_p;
+  if (&D.96369.D.28283._M_local_buf == _41)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _44 = D.96369.D.28283._M_allocated_capacity;
+  _45 = _44 + 1;
+  operator delete (_41, _45);
+
+  <bb 8> [local count: 16104516]:
+  D.96369 ={v} {CLOBBER(eob)};
+  D.96369 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96369);
+  D.96369 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+
+  <bb 13> [local count: 97603128]:
+
+  <bb 14> [local count: 976138696]:
+  # ivtmp_65 = PHI <ivtmp_64(14), 10(13)>
+  _28 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _28;
+  std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (&engine, _5);
+  _29 = std::uniform_int_distribution<int>::operator()<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24> > (&val, &engine, &val._M_param);
+  _25 = std::basic_ostream<char>::operator<< (&cout, _29);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_64 = ivtmp_65 + 4294967295;
+  if (ivtmp_64 != 0)
+    goto <bb 14>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 15> [local count: 97603128]:
+  _54 = cout._vptr.basic_ostream;
+  _55 = MEM[(long int *)_54 + -24B];
+  _56 = (sizetype) _55;
+  _57 = &cout + _56;
+  _62 = MEM[(const struct basic_ios *)_57]._M_ctype;
+  if (_62 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _66 = MEM[(const struct ctype *)_62]._M_widen_ok;
+  if (_66 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _69 = MEM[(const struct ctype *)_62]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_62);
+  _70 = MEM[(const struct ctype *)_62].D.44110._vptr.facet;
+  _71 = MEM[(int (*) () *)_70 + 48B];
+  _73 = OBJ_TYPE_REF(_71;(const struct ctype)_62->6B) (_62, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _74 = PHI <_69(18), _73(19)>
+  _59 = (int) _74;
+  _60 = std::basic_ostream<char>::put (&cout, _59);
+  std::basic_ostream<char>::flush (_60);
+  generate<5, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96375 ={v} {CLOBBER};
+  D.96369 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm4EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _43 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_43);
+
+}
+
+
+
+;; Function generate<3, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4654, decl_uid=93090, cgraph_uid=1955, symbol_order=2653)
+
+type generate<3, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96450;
+  __int128 unsigned __product;
+  long unsigned int __low;
+  long unsigned int __threshold;
+  const __uctype __urange;
+  __uctype __ret;
+  const __uctype __uerange;
+  struct forward_iterator_tag D.96408;
+  const struct string D.96402;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  unsigned int ivtmp_6;
+  unsigned int ivtmp_8;
+  struct basic_ostream & _25;
+  unsigned int _28;
+  char * _41;
+  void * _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  int _54;
+  long unsigned int _55;
+  int _56;
+  long unsigned int _57;
+  long unsigned int _61;
+  int _62;
+  unsigned int _63;
+  unsigned int _65;
+  unsigned int _66;
+  int _67;
+  long unsigned int _68;
+  __int128 unsigned _69;
+  __int128 unsigned _70;
+  long unsigned int _73;
+  long unsigned int _75;
+  __int128 unsigned _76;
+  __int128 unsigned _81;
+  long unsigned int _82;
+  int (*) () * _84;
+  long int _85;
+  sizetype _86;
+  struct basic_ios * _87;
+  int _89;
+  struct basic_ostream & _90;
+  const struct __ctype_type * _92;
+  char _96;
+  long unsigned int _97;
+  char _99;
+  int (*) () * _100;
+  int (*) () _101;
+  char _103;
+  char _104;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct mersenne_twister_engine *)&engine] ={v} {CLOBBER(bob)};
+  std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::seed (&engine, 5489);
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96402] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96402] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96402]._M_p = &D.96402.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96402, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96408);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96402);
+
+  <bb 6> [local count: 16104516]:
+  _41 = D.96402._M_dataplus._M_p;
+  if (&D.96402.D.28283._M_local_buf == _41)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _44 = D.96402.D.28283._M_allocated_capacity;
+  _45 = _44 + 1;
+  operator delete (_41, _45);
+
+  <bb 8> [local count: 16104516]:
+  D.96402 ={v} {CLOBBER(eob)};
+  D.96402 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96402);
+  D.96402 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 27>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+
+  <bb 13> [local count: 97603128]:
+
+  <bb 14> [local count: 976138696]:
+  # ivtmp_8 = PHI <ivtmp_6(20), 10(13)>
+  _28 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _28;
+  std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::seed (&engine, _5);
+  _54 = MEM[(const struct param_type *)&val]._M_b;
+  _55 = (long unsigned int) _54;
+  _56 = MEM[(const struct param_type *)&val]._M_a;
+  _57 = (long unsigned int) _56;
+  __urange_58 = _55 - _57;
+  if (__urange_58 != 18446744073709551615)
+    goto <bb 15>; [66.00%]
+  else
+    goto <bb 19>; [34.00%]
+
+  <bb 15> [local count: 644251536]:
+  __uerange_59 = __urange_58 + 1;
+  _68 = std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::operator() (&engine);
+  _69 = (__int128 unsigned) _68;
+  _70 = (__int128 unsigned) __uerange_59;
+  __product_71 = _69 * _70;
+  __low_72 = (long unsigned int) __product_71;
+  if (__uerange_59 > __low_72)
+    goto <bb 16>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 16> [local count: 322125768]:
+  _97 = _57 + 18446744073709551615;
+  _73 = _97 - _55;
+  __threshold_74 = _73 % __uerange_59;
+  if (__low_72 < __threshold_74)
+    goto <bb 17>; [89.00%]
+  else
+    goto <bb 18>; [11.00%]
+
+  <bb 17> [local count: 2606290321]:
+  _75 = std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::operator() (&engine);
+  _76 = (__int128 unsigned) _75;
+  __product_77 = _70 * _76;
+  __low_78 = (long unsigned int) __product_77;
+  if (__threshold_74 > __low_78)
+    goto <bb 17>; [89.00%]
+  else
+    goto <bb 18>; [11.00%]
+
+  <bb 18> [local count: 644251536]:
+  # __product_80 = PHI <__product_71(15), __product_77(17), __product_71(16)>
+  _81 = __product_80 >> 64;
+  _82 = (long unsigned int) _81;
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 331887160]:
+  _61 = std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::operator() (&engine);
+
+  <bb 20> [local count: 976138696]:
+  # __ret_64 = PHI <_82(18), _61(19)>
+  _62 = MEM[(const struct param_type *)&val]._M_a;
+  _63 = (unsigned int) _62;
+  _65 = (unsigned int) __ret_64;
+  _66 = _63 + _65;
+  _67 = (int) _66;
+  _25 = std::basic_ostream<char>::operator<< (&cout, _67);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_6 = ivtmp_8 + 4294967295;
+  if (ivtmp_6 != 0)
+    goto <bb 14>; [90.00%]
+  else
+    goto <bb 21>; [10.00%]
+
+  <bb 21> [local count: 97603128]:
+  _84 = cout._vptr.basic_ostream;
+  _85 = MEM[(long int *)_84 + -24B];
+  _86 = (sizetype) _85;
+  _87 = &cout + _86;
+  _92 = MEM[(const struct basic_ios *)_87]._M_ctype;
+  if (_92 == 0B)
+    goto <bb 22>; [0.00%]
+  else
+    goto <bb 23>; [100.00%]
+
+  <bb 22> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 23> [local count: 97603128]:
+  _96 = MEM[(const struct ctype *)_92]._M_widen_ok;
+  if (_96 != 0)
+    goto <bb 24>; [51.12%]
+  else
+    goto <bb 25>; [48.88%]
+
+  <bb 24> [local count: 49894719]:
+  _99 = MEM[(const struct ctype *)_92]._M_widen[10];
+  goto <bb 26>; [100.00%]
+
+  <bb 25> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_92);
+  _100 = MEM[(const struct ctype *)_92].D.44110._vptr.facet;
+  _101 = MEM[(int (*) () *)_100 + 48B];
+  _103 = OBJ_TYPE_REF(_101;(const struct ctype)_92->6B) (_92, 10);
+
+  <bb 26> [local count: 97603128]:
+  # _104 = PHI <_99(24), _103(25)>
+  _89 = (int) _104;
+  _90 = std::basic_ostream<char>::put (&cout, _89);
+  std::basic_ostream<char>::flush (_90);
+  generate<4, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 27> [count: 0]:
+<L15>:
+  D.96408 ={v} {CLOBBER};
+  D.96402 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm3EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _43 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_43);
+
+}
+
+
+
+;; Function generate<2, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4570, decl_uid=92058, cgraph_uid=1871, symbol_order=2561)
+
+type generate<2, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96484;
+  struct forward_iterator_tag D.96461;
+  const struct string D.96455;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  struct basic_ostream & _25;
+  unsigned int _28;
+  int _29;
+  char * _41;
+  void * _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  int (*) () * _54;
+  long int _55;
+  sizetype _56;
+  struct basic_ios * _57;
+  int _59;
+  struct basic_ostream & _60;
+  const struct __ctype_type * _62;
+  unsigned int ivtmp_64;
+  unsigned int ivtmp_65;
+  char _66;
+  char _69;
+  int (*) () * _70;
+  int (*) () _71;
+  char _73;
+  char _74;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct mersenne_twister_engine *)&engine] ={v} {CLOBBER(bob)};
+  std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::seed (&engine, 5489);
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96455] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96455] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96455]._M_p = &D.96455.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96455, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96461);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96455);
+
+  <bb 6> [local count: 16104516]:
+  _41 = D.96455._M_dataplus._M_p;
+  if (&D.96455.D.28283._M_local_buf == _41)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _44 = D.96455.D.28283._M_allocated_capacity;
+  _45 = _44 + 1;
+  operator delete (_41, _45);
+
+  <bb 8> [local count: 16104516]:
+  D.96455 ={v} {CLOBBER(eob)};
+  D.96455 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96455);
+  D.96455 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 13>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+
+  <bb 13> [local count: 97603128]:
+
+  <bb 14> [local count: 976138696]:
+  # ivtmp_65 = PHI <ivtmp_64(14), 10(13)>
+  _28 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _28;
+  std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::seed (&engine, _5);
+  _29 = std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> > (&val, &engine, &val._M_param);
+  _25 = std::basic_ostream<char>::operator<< (&cout, _29);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_64 = ivtmp_65 + 4294967295;
+  if (ivtmp_64 != 0)
+    goto <bb 14>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 15> [local count: 97603128]:
+  _54 = cout._vptr.basic_ostream;
+  _55 = MEM[(long int *)_54 + -24B];
+  _56 = (sizetype) _55;
+  _57 = &cout + _56;
+  _62 = MEM[(const struct basic_ios *)_57]._M_ctype;
+  if (_62 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _66 = MEM[(const struct ctype *)_62]._M_widen_ok;
+  if (_66 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _69 = MEM[(const struct ctype *)_62]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_62);
+  _70 = MEM[(const struct ctype *)_62].D.44110._vptr.facet;
+  _71 = MEM[(int (*) () *)_70 + 48B];
+  _73 = OBJ_TYPE_REF(_71;(const struct ctype)_62->6B) (_62, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _74 = PHI <_69(18), _73(19)>
+  _59 = (int) _74;
+  _60 = std::basic_ostream<char>::put (&cout, _59);
+  std::basic_ostream<char>::flush (_60);
+  generate<3, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96461 ={v} {CLOBBER};
+  D.96455 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm2EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _43 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_43);
+
+}
+
+
+
+;; Function generate<1, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (_Z8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4457, decl_uid=89372, cgraph_uid=1758, symbol_order=2442)
+
+type generate<1, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (struct tuple & t)
+{
+  void * D.96523;
+  long unsigned int __res;
+  struct forward_iterator_tag D.96497;
+  const struct string D.96491;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  struct basic_ostream & _25;
+  unsigned int _28;
+  int _29;
+  char * _42;
+  void * _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  int (*) () * _56;
+  long int _57;
+  sizetype _58;
+  struct basic_ios * _59;
+  int _61;
+  struct basic_ostream & _62;
+  const struct __ctype_type * _64;
+  unsigned int ivtmp_66;
+  char _68;
+  char _71;
+  int (*) () * _72;
+  int (*) () _73;
+  char _75;
+  char _76;
+  long unsigned int _78;
+  unsigned int ivtmp_80;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct linear_congruential_engine *)&engine] ={v} {CLOBBER(bob)};
+  engine._M_x = 1;
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96491] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96491] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96491]._M_p = &D.96491.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96491, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96497);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96491);
+
+  <bb 6> [local count: 16104516]:
+  _42 = D.96491._M_dataplus._M_p;
+  if (&D.96491.D.28283._M_local_buf == _42)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _45 = D.96491.D.28283._M_allocated_capacity;
+  _46 = _45 + 1;
+  operator delete (_42, _46);
+
+  <bb 8> [local count: 16104516]:
+  D.96491 ={v} {CLOBBER(eob)};
+  D.96491 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96491);
+  D.96491 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  goto <bb 14>; [100.00%]
+
+  <bb 13> [local count: 976138696]:
+  # ivtmp_66 = PHI <ivtmp_80(13), 10(14)>
+  _28 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _28;
+  __res_55 = _5 % 2147483647;
+  _78 = MAX_EXPR <__res_55, 1>;
+  engine._M_x = _78;
+  _29 = std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647> > (&val, &engine, &val._M_param);
+  _25 = std::basic_ostream<char>::operator<< (&cout, _29);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_80 = ivtmp_66 + 4294967295;
+  if (ivtmp_80 != 0)
+    goto <bb 13>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 14> [local count: 97603128]:
+  goto <bb 13>; [100.00%]
+
+  <bb 15> [local count: 97603128]:
+  _56 = cout._vptr.basic_ostream;
+  _57 = MEM[(long int *)_56 + -24B];
+  _58 = (sizetype) _57;
+  _59 = &cout + _58;
+  _64 = MEM[(const struct basic_ios *)_59]._M_ctype;
+  if (_64 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _68 = MEM[(const struct ctype *)_64]._M_widen_ok;
+  if (_68 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _71 = MEM[(const struct ctype *)_64]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_64);
+  _72 = MEM[(const struct ctype *)_64].D.44110._vptr.facet;
+  _73 = MEM[(int (*) () *)_72 + 48B];
+  _75 = OBJ_TYPE_REF(_73;(const struct ctype)_64->6B) (_64, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _76 = PHI <_71(18), _75(19)>
+  _61 = (int) _76;
+  _62 = std::basic_ostream<char>::put (&cout, _61);
+  std::basic_ostream<char>::flush (_62);
+  generate<2, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96497 ={v} {CLOBBER};
+  D.96491 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm1EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _44 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_44);
+
+}
+
+
+
+;; Function generate<> (_Z8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE, funcdef_no=4256, decl_uid=86183, cgraph_uid=1557, symbol_order=2233)
+
+type generate<> (struct tuple & t)
+{
+  void * D.96562;
+  long unsigned int __res;
+  struct forward_iterator_tag D.96536;
+  const struct string D.96530;
+  static struct uniform_int_distribution val;
+  static struct random_device rd;
+  struct EngineType engine;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  long unsigned int _5;
+  struct basic_ostream & _25;
+  unsigned int _28;
+  int _29;
+  char * _42;
+  void * _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  int (*) () * _56;
+  long int _57;
+  sizetype _58;
+  struct basic_ios * _59;
+  int _61;
+  struct basic_ostream & _62;
+  const struct __ctype_type * _64;
+  unsigned int ivtmp_66;
+  char _68;
+  char _71;
+  int (*) () * _72;
+  int (*) () _73;
+  char _75;
+  char _76;
+  long unsigned int _78;
+  unsigned int ivtmp_80;
+
+  <bb 2> [local count: 97603128]:
+  MEM[(struct linear_congruential_engine *)&engine] ={v} {CLOBBER(bob)};
+  engine._M_x = 1;
+  _1 = __atomic_load_1 (&_ZGVZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd, 2);
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 3> [local count: 48801564]:
+  _2 = __cxa_guard_acquire (&_ZGVZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  if (_2 != 0)
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 10>; [67.00%]
+
+  <bb 4> [local count: 16104516]:
+  rd ={v} {CLOBBER(bob)};
+  MEM[(struct basic_string *)&D.96530] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96530] ={v} {CLOBBER(bob)};
+  MEM[(struct _Alloc_hider *)&D.96530]._M_p = &D.96530.D.28283._M_local_buf;
+  std::__cxx11::basic_string<char>::_M_construct<const char*> (&D.96530, "default", &MEM <const char[8]> [(void *)"default" + 7B], D.96536);
+
+  <bb 5> [local count: 16104516]:
+  std::random_device::_M_init (&rd, &D.96530);
+
+  <bb 6> [local count: 16104516]:
+  _42 = D.96530._M_dataplus._M_p;
+  if (&D.96530.D.28283._M_local_buf == _42)
+    goto <bb 8>; [18.09%]
+  else
+    goto <bb 7>; [81.91%]
+
+  <bb 7> [local count: 13191209]:
+  _45 = D.96530.D.28283._M_allocated_capacity;
+  _46 = _45 + 1;
+  operator delete (_42, _46);
+
+  <bb 8> [local count: 16104516]:
+  D.96530 ={v} {CLOBBER(eob)};
+  D.96530 ={v} {CLOBBER(eos)};
+  __cxxabiv1::__cxa_atexit (__dt_comp , &rd, &__dso_handle);
+  __cxa_guard_release (&_ZGVZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [count: 0]:
+<L24>:
+  std::__cxx11::basic_string<char>::_M_dispose (&D.96530);
+  D.96530 ={v} {CLOBBER(eob)};
+  __builtin_eh_copy_values (2, 7);
+  goto <bb 21>; [100.00%]
+
+  <bb 10> [local count: 97603128]:
+  _3 = __atomic_load_1 (&_ZGVZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, 2);
+  if (_3 == 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 11> [local count: 32209032]:
+  _4 = __cxa_guard_acquire (&_ZGVZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  if (_4 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 12> [local count: 10628981]:
+  MEM[(struct param_type *)&val] ={v} {CLOBBER(bob)};
+  MEM[(struct param_type *)&val]._M_a = 1;
+  MEM[(struct param_type *)&val]._M_b = 9;
+  __cxa_guard_release (&_ZGVZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val);
+  goto <bb 14>; [100.00%]
+
+  <bb 13> [local count: 976138696]:
+  # ivtmp_66 = PHI <ivtmp_80(13), 10(14)>
+  _28 = std::random_device::_M_getval (&rd);
+  _5 = (long unsigned int) _28;
+  __res_55 = _5 % 2147483647;
+  _78 = MAX_EXPR <__res_55, 1>;
+  engine._M_x = _78;
+  _29 = std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (&val, &engine, &val._M_param);
+  _25 = std::basic_ostream<char>::operator<< (&cout, _29);
+  std::__ostream_insert<char, std::char_traits<char> > (_25, " ", 1);
+  ivtmp_80 = ivtmp_66 + 4294967295;
+  if (ivtmp_80 != 0)
+    goto <bb 13>; [90.00%]
+  else
+    goto <bb 15>; [10.00%]
+
+  <bb 14> [local count: 97603128]:
+  goto <bb 13>; [100.00%]
+
+  <bb 15> [local count: 97603128]:
+  _56 = cout._vptr.basic_ostream;
+  _57 = MEM[(long int *)_56 + -24B];
+  _58 = (sizetype) _57;
+  _59 = &cout + _58;
+  _64 = MEM[(const struct basic_ios *)_59]._M_ctype;
+  if (_64 == 0B)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [count: 0]:
+  std::__throw_bad_cast ();
+
+  <bb 17> [local count: 97603128]:
+  _68 = MEM[(const struct ctype *)_64]._M_widen_ok;
+  if (_68 != 0)
+    goto <bb 18>; [51.12%]
+  else
+    goto <bb 19>; [48.88%]
+
+  <bb 18> [local count: 49894719]:
+  _71 = MEM[(const struct ctype *)_64]._M_widen[10];
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [local count: 47708409]:
+  std::ctype<char>::_M_widen_init (_64);
+  _72 = MEM[(const struct ctype *)_64].D.44110._vptr.facet;
+  _73 = MEM[(int (*) () *)_72 + 48B];
+  _75 = OBJ_TYPE_REF(_73;(const struct ctype)_64->6B) (_64, 10);
+
+  <bb 20> [local count: 97603128]:
+  # _76 = PHI <_71(18), _75(19)>
+  _61 = (int) _76;
+  _62 = std::basic_ostream<char>::put (&cout, _61);
+  std::basic_ostream<char>::flush (_62);
+  generate<1, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, std::linear_congruential_engine<long unsigned int, 48271, 0, 2147483647>, std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>, std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>, std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>, 223, 23>, std::discard_block_engine<std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>, 389, 11>, std::shuffle_order_engine<std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>, 256>, std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647> > (t_20(D));
+  engine ={v} {CLOBBER(eos)};
+  return;
+
+  <bb 21> [count: 0]:
+<L15>:
+  D.96536 ={v} {CLOBBER};
+  D.96530 ={v} {CLOBBER};
+  __cxa_guard_abort (&_ZGVZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd);
+  _44 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_44);
+
+}
+
+
+
+;; Function main (main, funcdef_no=3807, decl_uid=76448, cgraph_uid=1193, symbol_order=1865) (executed once)
+
+Removing basic block 5
+int main ()
+{
+  unsigned long ivtmp.469;
+  long unsigned int engines___M_x_lsm.462;
+  long unsigned int __res;
+  long unsigned int __res;
+  struct tuple engines;
+  void * _22;
+  unsigned long _23;
+  unsigned long _25;
+
+  <bb 2> [local count: 1073741824]:
+  engines ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct _Tuple_impl *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct linear_congruential_engine *)&engines] ={v} {CLOBBER(bob)};
+  MEM[(struct linear_congruential_engine *)&engines]._M_x = 1;
+  MEM[(struct shuffle_order_engine *)&engines + 8B] ={v} {CLOBBER(bob)};
+  MEM[(struct linear_congruential_engine *)&engines + 8B] ={v} {CLOBBER(bob)};
+  ivtmp.469_31 = (unsigned long) &MEM <struct tuple> [(void *)&engines + 16B];
+  _25 = (unsigned long) &engines;
+  _23 = _25 + 2064;
+
+  <bb 3> [local count: 106300462976]:
+  # engines___M_x_lsm.462_33 = PHI <__res_30(3), 1(2)>
+  # ivtmp.469_40 = PHI <ivtmp.469_28(3), ivtmp.469_31(2)>
+  __res_29 = engines___M_x_lsm.462_33 * 16807;
+  __res_30 = __res_29 % 2147483647;
+  _22 = (void *) ivtmp.469_40;
+  MEM[(long unsigned int *)_22] = __res_30;
+  ivtmp.469_28 = ivtmp.469_40 + 8;
+  if (_23 != ivtmp.469_28)
+    goto <bb 3>; [98.99%]
+  else
+    goto <bb 4>; [1.01%]
+
+  <bb 4> [local count: 1073741824]:
+  MEM[(struct shuffle_order_engine *)&engines + 8B]._M_v[255] = __res_30;
+  __res_34 = __res_30 * 16807;
+  __res_35 = __res_34 % 2147483647;
+  MEM[(struct linear_congruential_engine *)&engines + 8B]._M_x = __res_35;
+  MEM[(struct shuffle_order_engine *)&engines + 8B]._M_y = __res_35;
+  MEM[(struct discard_block_engine *)&engines + 2072B] ={v} {CLOBBER(bob)};
+  MEM[(struct subtract_with_carry_engine *)&engines + 2072B] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (&MEM[(struct discard_block_engine *)&engines + 2072B]._M_b, 0);
+  MEM[(struct discard_block_engine *)&engines + 2072B]._M_n = 0;
+  MEM[(struct discard_block_engine *)&engines + 2192B] ={v} {CLOBBER(bob)};
+  MEM[(struct subtract_with_carry_engine *)&engines + 2192B] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (&MEM[(struct discard_block_engine *)&engines + 2192B]._M_b, 0);
+  MEM[(struct discard_block_engine *)&engines + 2192B]._M_n = 0;
+  MEM[(struct subtract_with_carry_engine *)&engines + 2408B] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 48, 5, 12>::seed (&MEM[(struct _Head_base *)&engines + 2408B]._M_head_impl, 0);
+  MEM[(struct subtract_with_carry_engine *)&engines + 2520B] ={v} {CLOBBER(bob)};
+  std::subtract_with_carry_engine<long unsigned int, 24, 10, 24>::seed (&MEM[(struct _Head_base *)&engines + 2520B]._M_head_impl, 0);
+  MEM[(struct mersenne_twister_engine *)&engines + 2728B] ={v} {CLOBBER(bob)};
+  std::mersenne_twister_engine<long unsigned int, 64, 312, 156, 31, 13043109905998158313, 29, 6148914691236517205, 17, 8202884508482404352, 37, 18444473444759240704, 43, 6364136223846793005>::seed (&MEM[(struct _Head_base *)&engines + 2728B]._M_head_impl, 5489);
+  MEM[(struct mersenne_twister_engine *)&engines + 5232B] ={v} {CLOBBER(bob)};
+  std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::seed (&MEM[(struct _Head_base *)&engines + 5232B]._M_head_impl, 5489);
+  MEM[(struct linear_congruential_engine *)&engines + 10232B] ={v} {CLOBBER(bob)};
+  MEM[(struct linear_congruential_engine *)&engines + 10232B]._M_x = 1;
+  MEM[(struct linear_congruential_engine *)&engines + 10240B] ={v} {CLOBBER(bob)};
+  MEM[(struct linear_congruential_engine *)&engines + 10240B]._M_x = 1;
+  generate<> (&engines);
+  engines ={v} {CLOBBER(eos)};
+  return 0;
+
+}
+
+
