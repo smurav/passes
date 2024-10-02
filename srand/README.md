@@ -16,6 +16,9 @@ g++-14 srand.cpp -o srand
 5 4 5 7 0 3 0 8 2 2 
 5 8 8 5 8 7 5 1 7 7
 
+## Просмотр всех проходов
+g++-14 -O2 rnd.cpp -o rnd -fdump-passes-all
+
 ## Получение промежуточного представления кода
 g++-14 -O1 -fdump-tree-original -fdump-tree-optimized srand.cpp -o srand
 
