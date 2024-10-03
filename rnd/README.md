@@ -17,7 +17,7 @@ g++-14 rnd.cpp -o rnd_gcc
 9 3 2 4 7 7 6 1 7 1
 
 ## Просмотр всех проходов
-g++-14 -O2 rnd.cpp -o rnd -fdump-passes
+g++-14 -O2 rnd.cpp -o rnd -fdump-tree-all
 
 ## Получение промежуточного представления кода
 g++-14 -O1 -fdump-tree-original -fdump-tree-optimized rnd.cpp -o rnd
@@ -121,22 +121,35 @@ cat rnd_gcc_instr-rnd.cpp.265t.optimized
 ## Просмотр промежуточного представления
 cat rnd.ll
 ...
-912 14:                                               ; preds = %3
-  %15 = getelementptr inbounds i8, ptr %1, i64 10224
-  store i64 624, ptr %15, align 8, !tbaa !12
-  %16 = getelementptr inbounds i8, ptr %1, i64 10232
-  store i64 1, ptr %16, align 8, !tbaa !14
-  %17 = getelementptr inbounds i8, ptr %1, i64 10240
-  store i64 1, ptr %17, align 8, !tbaa !16
-  call void @_Z8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EE(ptr noundef nonnull align 8 dereferenceable(10248) %1)
-  call void @llvm.lifetime.end.p0(i64 10248, ptr nonnull %1) #13
-  ret i32 0
+1085 define linkonce_odr dso_local void @_ZNSt26linear_congruential_engineIjLj40014ELj0ELj2147483563EEC2Ej(ptr noundef nonnull align 4 dereferenceable(4) %0, i32 noundef %1) unnamed_addr #1 comdat align 2 {
+  %3 = alloca ptr, align 8
+  %4 = alloca i32, align 4
+  store ptr %0, ptr %3, align 8
+  store i32 %1, ptr %4, align 4
+  %5 = load ptr, ptr %3, align 8
+  %6 = load i32, ptr %4, align 4
+  call void @_ZNSt26linear_congruential_engineIjLj40014ELj0ELj2147483563EE4seedEj(ptr noundef nonnull align 4 dereferenceable(4) %5, i32 noundef %6)
+  ret void
+}
 ...
 
 ## Получение промежуточного представления кода с вредоносной оптимизацией
 ## Библиотеку llvm_seedpass.so необходимо предварительно собрать из исходного 
 ## кода в каталоге ../llvm/seedpass
 ~/llvm20/bin/opt --load-pass-plugin=./plugins/llvm_seedpass.so -passes="seedpass,default<O2>" rnd.ll -S -o rnd_opt.ll 
+
+## Просмотр модифицированного промежуточного представления
+cat rnd_opt.ll
+...
+522 27:                                               ; preds = %24
+  %28 = call noundef i32 @_ZNSt13random_deviceclEv(ptr noundef nonnull align 8 dereferenceable(5000) @_ZZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE2rd)
+  %29 = zext i32 %28 to i64
+  call void @_ZNSt26linear_congruential_engineImLm16807ELm0ELm2147483647EE4seedEm(ptr noundef nonnull align 8 dereferenceable(8) %3, i64 noundef 1234567)
+  %30 = call noundef i32 @_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_(ptr noundef nonnull align 4 dereferenceable(8) @_ZZ8generateILm0EJSt26linear_congruential_engineImLm16807ELm0ELm2147483647EES0_ImLm48271ELm0ELm2147483647EESt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EES3_ImLm64ELm312ELm156ELm31ELm13043109905998158313ELm29ELm6148914691236517205ELm17ELm8202884508482404352ELm37ELm18444473444759240704ELm43ELm6364136223846793005EESt26subtract_with_carry_engineImLm24ELm10ELm24EES6_ImLm48ELm5ELm12EESt20discard_block_engineIS7_Lm223ELm23EES9_IS8_Lm389ELm11EESt20shuffle_order_engineIS1_Lm256EES1_EENSt9enable_ifIXltT_sZT0_EvE4typeERSt5tupleIJDpT0_EEE3val, ptr noundef nonnull align 8 dereferenceable(8) %3)
+  %31 = call noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEi(ptr noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i32 noundef %30)
+  %32 = call noundef nonnull align 8 dereferenceable(8) ptr @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(ptr noundef nonnull align 8 dereferenceable(8) %31, ptr noundef @.str)
+  br label %33
+...
 
 ## Прямое получение промежуточного представления кода с вредоносной оптимизацией
 ~/llvm20/bin/clang -S -emit-llvm -O1 -fpass-plugin=./plugins/llvm_seedpass.so rnd.cpp -o rnd_instr.ll -I /usr/include/c++/11/ -I /usr/include/x86_64-linux-gnu/c++/11/ 
